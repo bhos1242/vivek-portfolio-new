@@ -1,18 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Progress } from "@/components/ui/progress"
 import { Code, Database, Cloud, Palette, Brain, Zap } from "lucide-react"
-
-interface Skill {
-  name: string;
-  level: number;
-}
 
 interface SkillCategory {
   title: string;
   icon: React.ReactNode;
-  skills: (string | Skill)[];
+  skills: string[];
 }
 
 const skillCategories: SkillCategory[] = [
@@ -20,53 +14,53 @@ const skillCategories: SkillCategory[] = [
     title: "Languages",
     icon: <Code className="h-5 w-5" />,
     skills: [
-      { name: "Python", level: 90 },
-      { name: "JavaScript", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Java", level: 80 },
-      { name: "C++", level: 75 },
-      { name: "C", level: 70 }
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Java",
+      "C++",
+      "C"
     ],
   },
   {
     title: "Frameworks",
     icon: <Zap className="h-5 w-5" />,
     skills: [
-      { name: "React.js", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "Node.js", level: 85 },
-      { name: "Express.js", level: 85 }
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js"
     ],
   },
   {
     title: "Web Technologies",
     icon: <Palette className="h-5 w-5" />,
     skills: [
-      { name: "HTML5", level: 95 },
-      { name: "CSS3", level: 90 },
-      { name: "REST APIs", level: 90 },
-      { name: "JSON", level: 95 }
+      "HTML5",
+      "CSS3",
+      "REST APIs",
+      "JSON"
     ],
   },
   {
     title: "Databases",
     icon: <Database className="h-5 w-5" />,
     skills: [
-      { name: "MySQL", level: 85 },
-      { name: "MongoDB", level: 80 },
-      { name: "PostgreSQL", level: 75 },
-      { name: "Prisma ORM", level: 85 }
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "Prisma ORM"
     ],
   },
   {
     title: "Cloud & DevOps",
     icon: <Cloud className="h-5 w-5" />,
     skills: [
-      { name: "AWS", level: 75 },
-      { name: "Docker", level: 70 },
-      { name: "Git", level: 90 },
-      { name: "GitHub", level: 95 },
-      { name: "CI/CD", level: 70 }
+      "AWS",
+      "Docker",
+      "Git",
+      "GitHub",
+      "CI/CD"
     ],
   },
   {
@@ -122,29 +116,17 @@ export function SkillsSection() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex}>
-                        {typeof skill === 'object' ? (
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-center">
-                              <span className="text-sm font-medium">{skill.name}</span>
-                              <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                            </div>
-                            <Progress 
-                              value={skill.level} 
-                              className="h-2 bg-muted"
-                            />
-                          </div>
-                        ) : (
-                          <Badge
-                            variant="secondary"
-                            className="text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default mr-2 mb-2"
-                          >
-                            {skill}
-                          </Badge>
-                        )}
-                      </div>
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge
+                          key={skillIndex}
+                          variant="secondary"
+                          className="text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -163,12 +145,12 @@ export function SkillsSection() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {(skillCategories[5].skills as string[]).map((skill, skillIndex) => (
+                  <div className="flex flex-wrap gap-2">
+                    {skillCategories[5].skills.map((skill, skillIndex) => (
                       <Badge
                         key={skillIndex}
                         variant="secondary"
-                        className="text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default justify-center py-2"
+                        className="text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
                       >
                         {skill}
                       </Badge>
