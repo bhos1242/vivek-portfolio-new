@@ -25,6 +25,31 @@ const awards = [
     id: 4,
     image: "/gallary/image copy 3.png",
     alt: "Award Certificate 4"
+  },
+  {
+    id: 5,
+    image: "/gallary/image copy 4.png",
+    alt: "Award Certificate 5"
+  },
+  {
+    id: 6,
+    image: "/gallary/image copy 5.png",
+    alt: "Award Certificate 6"
+  },
+  {
+    id: 7,
+    image: "/gallary/image copy 6.png",
+    alt: "Award Certificate 7"
+  },
+  {
+    id: 8,
+    image: "/gallary/image copy 7.png",
+    alt: "Award Certificate 8"
+  },
+  {
+    id: 9,
+    image: "/gallary/image copy 8.png",
+    alt: "Award Certificate 9"
   }
 ]
 
@@ -44,7 +69,7 @@ export function AwardsGallerySection() {
         </div>
 
         {/* Clean Image Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {awards.map((award) => (
             <Dialog key={award.id}>
               <DialogTrigger asChild>
