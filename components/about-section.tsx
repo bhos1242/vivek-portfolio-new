@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code, Building, GraduationCap, Users, Award, Heart } from "lucide-react"
+import { Code, Building, GraduationCap, Award, Heart, Mail } from "lucide-react"
 
 export function AboutSection() {
   const highlights = [
@@ -19,11 +19,6 @@ export function AboutSection() {
       icon: <Code className="h-5 w-5" />,
       title: "Full-Stack",
       description: "Web Developer"
-    },
-    {
-      icon: <Users className="h-5 w-5" />,
-      title: "Tech Speaker",
-      description: "Guest Lectures"
     }
   ]
 
@@ -52,8 +47,8 @@ export function AboutSection() {
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                 With a strong foundation in both frontend and backend technologies, I specialize in building 
-                scalable, user-friendly web applications. I'm passionate about sharing knowledge through 
-                guest lectures and tech sessions, helping others grow in their development journey.
+                scalable, user-friendly web applications. I'm passionate about continuous learning and 
+                staying updated with the latest technologies to deliver innovative solutions.
               </p>
             </div>
 
@@ -73,7 +68,7 @@ export function AboutSection() {
             </div>
 
             <Button size="lg" className="w-full sm:w-auto">
-              <Users className="mr-2 h-5 w-5" />
+              <Mail className="mr-2 h-5 w-5" />
               Let's Collaborate
             </Button>
           </div>
