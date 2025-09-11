@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
-import { Menu, X, Code, Download, Mail } from "lucide-react"
+import { Menu, X, Code, Mail } from "lucide-react"
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -98,14 +98,6 @@ export function Navigation() {
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center gap-2">
             <Button
-              variant="outline"
-              size="sm"
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Resume
-            </Button>
-            <Button
               size="sm"
               onClick={() => scrollToSection("#contact")}
               className="bg-primary hover:bg-primary/90 transition-all duration-300"
@@ -172,13 +164,6 @@ export function Navigation() {
 
                 {/* Mobile CTA Buttons */}
                 <div className="space-y-3 py-6 border-t border-border/50">
-                  <Button
-                    variant="outline"
-                    className="w-full justify-start hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  >
-                    <Download className="mr-3 h-4 w-4" />
-                    Download Resume
-                  </Button>
                   <Button
                     className="w-full justify-start bg-primary hover:bg-primary/90 transition-all duration-300"
                     onClick={() => scrollToSection("#contact")}

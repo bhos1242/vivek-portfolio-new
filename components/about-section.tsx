@@ -13,7 +13,7 @@ export function AboutSection() {
     {
       icon: <GraduationCap className="h-5 w-5" />,
       title: "MCA Student",
-      description: "GPA 8.03"
+      description: "Modern College of Engineering"
     },
     {
       icon: <Code className="h-5 w-5" />,
@@ -48,7 +48,7 @@ export function AboutSection() {
                 I'm a passionate full-stack web developer and Co-Founder of{" "}
                 <span className="text-primary font-semibold">Navibyte Innovations Pvt. Ltd.</span>
                 {" "}Currently pursuing my <span className="font-semibold">Master of Computer Applications (MCA)</span> at{" "}
-                <span className="font-semibold">Modern College of Engineering, Pune</span> with a GPA of 8.03.
+                <span className="font-semibold">Modern College of Engineering, Pune</span>.
               </p>
               <p className="text-base sm:text-lg leading-relaxed text-muted-foreground">
                 With a strong foundation in both frontend and backend technologies, I specialize in building 

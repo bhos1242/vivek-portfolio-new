@@ -6,6 +6,7 @@ const education = [
   {
     degree: "Master of Computer Applications (MCA)",
     institution: "Modern College of Engineering, Pune",
+    gpa: "8.03",
     period: "2024–2026",
     status: "Current",
     highlights: ["Advanced Software Development", "System Architecture", "Research Methodology"],
@@ -13,6 +14,7 @@ const education = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Modern College, Pune",
+    gpa: "9.19",
     period: "2021–2024",
     status: "Completed",
     highlights: ["First Class with Distinction", "Programming Fundamentals", "Database Management"],
@@ -95,11 +97,10 @@ export function EducationSection() {
                     <div className="flex items-center gap-2">
                       <Award className="h-4 w-4 text-primary" />
                       <div className="text-right">
-                        <div className="text-primary font-bold text-lg">
-                          {edu.status === 'Completed' ? 'First Class' : 'In Progress'}
-                        </div>
+                        <div className="text-primary font-bold text-lg">GPA: {edu.gpa}</div>
                         <div className="text-xs text-muted-foreground">
-                          {edu.status === 'Completed' ? 'With Distinction' : 'Current Studies'}
+                          {parseFloat(edu.gpa) >= 9.0 ? 'Excellent' : 
+                           parseFloat(edu.gpa) >= 8.0 ? 'Very Good' : 'Good'}
                         </div>
                       </div>
                     </div>
@@ -123,7 +124,11 @@ export function EducationSection() {
 
         {/* Academic Achievements Summary */}
         <div className="mt-12 lg:mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20">
+              <div className="text-2xl font-bold text-primary mb-2">8.6+</div>
+              <div className="text-sm text-muted-foreground">Overall CGPA</div>
+            </div>
             <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/30 border border-secondary/30">
               <div className="text-2xl font-bold text-foreground mb-2">5+</div>
               <div className="text-sm text-muted-foreground">Years of Study</div>
