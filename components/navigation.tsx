@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Menu, X, Code, Mail, Home, User, Briefcase, FolderOpen, GraduationCap, Award, ChevronUp } from "lucide-react"
+import { Menu, X, Code, Mail, Home, User, Briefcase, FolderOpen, GraduationCap, Award, Trophy, ChevronUp } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#hero", icon: Home },
@@ -15,6 +15,7 @@ const navItems = [
   { name: "Projects", href: "#projects", icon: FolderOpen },
   { name: "Education", href: "#education", icon: GraduationCap },
   { name: "Certifications", href: "#certifications", icon: Award },
+  { name: "Awards", href: "#awards", icon: Trophy },
   { name: "Contact", href: "#contact", icon: Mail },
 ]
 
