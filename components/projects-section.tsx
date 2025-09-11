@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github, Calendar, Star, ArrowRight } from "lucide-react"
-import Image from "next/image"
 
 const projects = [
   {
@@ -10,7 +9,6 @@ const projects = [
     description:
       "Platform for charitable donations with secure online payment gateways, intuitive UI/UX, and Prisma-backed database.",
     url: "https://www.donateaid.org.in",
-    image: "/charity-donation-website-interface.jpg",
     tags: ["React", "Next.js", "Prisma", "Payment Gateway"],
     year: "2024",
     status: "Live",
@@ -21,7 +19,6 @@ const projects = [
     description:
       "Travel booking platform featuring curated domestic & international tour packages, secure payment APIs, and responsive design.",
     url: "https://www.4startravels.com",
-    image: "/travel-booking-website-interface.png",
     tags: ["Next.js", "TypeScript", "Payment API", "Responsive Design"],
     year: "2024",
     status: "Live",
@@ -32,7 +29,6 @@ const projects = [
     description:
       "Service portal for company incorporation, GST registration, and trademark filing. Includes AI-powered service recommendations and real-time compliance tracking.",
     url: "https://www.startbusiness.co.in",
-    image: "/business-services-website-interface.jpg",
     tags: ["React", "AI Integration", "Real-time Tracking", "Business Services"],
     year: "2024",
     status: "Live",
@@ -61,50 +57,30 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`group hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-3 border-muted/50 bg-background/50 backdrop-blur-sm ${
+              className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-muted/50 bg-background/50 backdrop-blur-sm ${
                 project.featured ? 'ring-2 ring-primary/20' : ''
               }`}
             >
-              <div className="relative overflow-hidden">
-                <div className="aspect-video relative">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="absolute top-3 right-3 flex gap-2">
-                  <Badge variant="secondary" className="bg-background/90 text-primary font-medium">
-                    {project.status}
-                  </Badge>
-                  {project.featured && (
-                    <Badge className="bg-primary text-primary-foreground">
-                      <Star className="w-3 h-3 mr-1" />
-                      Featured
-                    </Badge>
-                  )}
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                    <div className="text-white">
-                      <h3 className="font-bold text-lg">{project.title}</h3>
-                      <p className="text-sm opacity-90">{project.year}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between mb-2">
                   <CardTitle className="text-primary text-lg group-hover:text-primary/80 transition-colors line-clamp-1">
                     {project.title}
                   </CardTitle>
-                  <div className="flex items-center gap-1 text-xs text-muted-foreground bg-muted/50 px-2 py-1 rounded-full">
-                    <Calendar className="h-3 w-3" />
-                    {project.year}
+                  <div className="flex gap-2">
+                    <Badge variant="secondary" className="bg-background/90 text-primary font-medium text-xs">
+                      {project.status}
+                    </Badge>
+                    {project.featured && (
+                      <Badge className="bg-primary text-primary-foreground text-xs">
+                        <Star className="w-3 h-3 mr-1" />
+                        Featured
+                      </Badge>
+                    )}
                   </div>
+                </div>
+                <div className="flex items-center gap-1 text-xs text-muted-foreground bg-muted/50 px-2 py-1 rounded-full w-fit">
+                  <Calendar className="h-3 w-3" />
+                  {project.year}
                 </div>
               </CardHeader>
 
