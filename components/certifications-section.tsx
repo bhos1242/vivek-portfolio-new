@@ -102,24 +102,6 @@ export function CertificationsSection() {
           ))}
         </div>
 
-        {/* Learning Stats */}
-        <div className="mt-12 lg:mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20">
-              <div className="text-2xl font-bold text-primary mb-2">{certifications.length}+</div>
-              <div className="text-sm text-muted-foreground">Verified Certifications</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/30 border border-secondary/30">
-              <div className="text-2xl font-bold text-foreground mb-2">100%</div>
-              <div className="text-sm text-muted-foreground">Completion Rate</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-accent/10 to-accent/20 border border-accent/30">
-              <div className="text-2xl font-bold text-foreground mb-2">2024</div>
-              <div className="text-sm text-muted-foreground">Latest Certification</div>
-            </div>
-          </div>
-        </div>
-
         {/* Call to Action */}
         <div className="mt-12 lg:mt-16 text-center">
           <div className="p-8 rounded-2xl bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border border-primary/20">
