@@ -160,7 +160,7 @@ export function ProjectsSection() {
                     </a>
                   </Button>
                   <Button size="sm" variant="outline" asChild className="group/github">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/bhos1242" target="_blank" rel="noopener noreferrer">
                       <Github className="h-3.5 w-3.5 group-hover/github:scale-110 transition-transform" />
                     </a>
                   </Button>

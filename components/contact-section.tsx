@@ -81,7 +81,7 @@ export function ContactSection() {
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com/vivekbhos",
+      href: "https://github.com/bhos1242",
       color: "hover:bg-gray-100 dark:hover:bg-gray-800"
     },
     {
