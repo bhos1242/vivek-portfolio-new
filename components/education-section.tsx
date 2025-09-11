@@ -1,21 +1,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Calendar, Award, BookOpen } from "lucide-react"
+import { GraduationCap, Calendar, MapPin } from "lucide-react"
 
 const education = [
   {
     degree: "Master of Computer Applications (MCA)",
     institution: "Modern College of Engineering, Pune",
     period: "2024–2026",
-    status: "Current",
-    highlights: ["Advanced Software Development", "System Architecture", "Research Methodology"],
   },
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Modern College, Pune",
     period: "2021–2024",
-    status: "Completed",
-    highlights: ["First Class with Distinction", "Programming Fundamentals", "Database Management"],
+  },
+  {
+    degree: "Higher Secondary Certificate (12th)",
+    institution: "Pemraj Sarda College, Ahilyanagar",
+    period: "2020",
+  },
+  {
+    degree: "Secondary School Certificate (10th)",
+    institution: "Shri Chhatrapati Shivaji Vidyalaya, Ghogargon",
+    period: "2018",
   },
 ]
 
@@ -36,103 +42,72 @@ export function EducationSection() {
           </p>
         </div>
 
-        <div className="space-y-6 lg:space-y-8">
-          {education.map((edu, index) => (
-            <Card 
-              key={index} 
-              className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-muted/50 bg-background/50 backdrop-blur-sm ${
-                edu.status === 'Current' ? 'ring-2 ring-primary/20' : ''
-              }`}
-            >
-              <CardHeader className="pb-4">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                  <div className="flex items-start gap-4 flex-1">
-                    <div className={`p-3 rounded-lg flex-shrink-0 ${
-                      edu.status === 'Current' 
-                        ? 'bg-primary/10 ring-2 ring-primary/20' 
-                        : 'bg-muted/50'
-                    }`}>
-                      <GraduationCap className={`h-6 w-6 ${
-                        edu.status === 'Current' ? 'text-primary' : 'text-muted-foreground'
-                      }`} />
-                    </div>
-                    
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-2">
-                        <CardTitle className="text-xl text-primary group-hover:text-primary/80 transition-colors">
-                          {edu.degree}
-                        </CardTitle>
-                        {edu.status === 'Current' && (
-                          <Badge variant="secondary" className="bg-primary/10 text-primary text-xs">
-                            <BookOpen className="w-3 h-3 mr-1" />
-                            Current
-                          </Badge>
-                        )}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block"></div>
+          
+          <div className="space-y-8 lg:space-y-12">
+            {education.map((edu, index) => (
+              <div key={index} className="relative">
+                {/* Timeline Node */}
+                <div className="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full ring-4 ring-primary/20 ring-offset-4 ring-offset-background hidden md:block z-10"></div>
+                
+                {/* Education Card */}
+                <div className="md:ml-20">
+                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-muted/50 bg-background/50 backdrop-blur-sm overflow-hidden">
+                    <div className="relative">
+                      {/* Year Badge */}
+                      <div className="absolute top-4 right-4 z-10">
+                        <Badge variant="secondary" className="bg-primary/10 text-primary font-semibold">
+                          {edu.period}
+                        </Badge>
                       </div>
-                      <p className="text-foreground font-medium text-lg mb-3">{edu.institution}</p>
                       
-                      {/* Highlights */}
-                      <div className="flex flex-wrap gap-2">
-                        {edu.highlights.map((highlight, highlightIndex) => (
-                          <Badge 
-                            key={highlightIndex}
-                            variant="outline" 
-                            className="text-xs px-2 py-1 hover:bg-primary/10 transition-colors"
-                          >
-                            {highlight}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-col lg:items-end gap-3 lg:text-right">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      <span className="text-sm font-medium">{edu.period}</span>
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      <Award className="h-4 w-4 text-primary" />
-                      <div className="text-right">
-                        <div className="text-primary font-bold text-lg">
-                          {edu.status === 'Completed' ? 'First Class' : 'In Progress'}
+                      <CardHeader className="pb-4">
+                        <div className="flex items-start gap-4 pr-20">
+                          <div className="p-3 rounded-lg flex-shrink-0 bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <GraduationCap className="h-6 w-6 text-primary" />
+                          </div>
+                          
+                          <div className="flex-1 min-w-0">
+                            <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2 leading-tight">
+                              {edu.degree}
+                            </CardTitle>
+                            <div className="flex items-center gap-2 text-muted-foreground">
+                              <MapPin className="h-4 w-4 flex-shrink-0" />
+                              <p className="font-medium">{edu.institution}</p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-xs text-muted-foreground">
-                          {edu.status === 'Completed' ? 'With Distinction' : 'Current Studies'}
-                        </div>
-                      </div>
+                      </CardHeader>
+                      
+                      {/* Progress Indicator for Current Education */}
+                      {index === 0 && (
+                        <CardContent className="pt-0">
+                          <div className="p-4 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/20">
+                            <div className="flex items-center gap-2 text-primary text-sm font-medium">
+                              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                              Currently Pursuing
+                            </div>
+                          </div>
+                        </CardContent>
+                      )}
                     </div>
-                  </div>
+                  </Card>
                 </div>
-              </CardHeader>
-              
-              {edu.status === 'Current' && (
-                <CardContent className="pt-0">
-                  <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
-                    <p className="text-sm text-muted-foreground text-center">
-                      Currently pursuing advanced studies in software architecture, 
-                      system design, and emerging technologies
-                    </p>
+                
+                {/* Mobile Timeline Connector */}
+                {index < education.length - 1 && (
+                  <div className="md:hidden flex justify-center py-4">
+                    <div className="w-0.5 h-8 bg-gradient-to-b from-primary to-primary/30"></div>
                   </div>
-                </CardContent>
-              )}
-            </Card>
-          ))}
-        </div>
-
-        {/* Academic Achievements Summary */}
-        <div className="mt-12 lg:mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/30 border border-secondary/30">
-              <div className="text-2xl font-bold text-foreground mb-2">5+</div>
-              <div className="text-sm text-muted-foreground">Years of Study</div>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-gradient-to-br from-accent/10 to-accent/20 border border-accent/30">
-              <div className="text-2xl font-bold text-foreground mb-2">100+</div>
-              <div className="text-sm text-muted-foreground">Subjects Completed</div>
-            </div>
+                )}
+              </div>
+            ))}
           </div>
+          
+          {/* Timeline End */}
+          <div className="absolute left-8 bottom-0 w-4 h-4 bg-gradient-to-br from-primary/30 to-transparent rounded-full hidden md:block"></div>
         </div>
       </div>
     </section>
