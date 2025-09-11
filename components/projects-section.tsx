@@ -25,6 +25,56 @@ const projects = [
     featured: true,
   },
   {
+    title: "Sneh Chhaya Foundation",
+    description:
+      "Non-profit organization website for social welfare initiatives, featuring donation management, volunteer registration, and community outreach programs.",
+    url: "https://www.snehchhaya.org",
+    tags: ["React", "Community Platform", "Social Impact", "CMS"],
+    year: "2024",
+    status: "Live",
+    featured: true,
+  },
+  {
+    title: "Free QR Code Generator",
+    description:
+      "Powerful online QR code generation tool with customizable designs, multiple format support, bulk generation capabilities, and analytics tracking.",
+    url: "https://www.freeqrcodegenerator.shop",
+    tags: ["Next.js", "QR Generation", "Analytics", "API Integration"],
+    year: "2024",
+    status: "Live",
+    featured: false,
+  },
+  {
+    title: "Google Reward Review",
+    description:
+      "Review management platform for Google Business listings, featuring automated review collection, response management, and business reputation analytics.",
+    url: "https://google-reward-review.vercel.app/",
+    tags: ["React", "Vercel", "Google API", "Review Management"],
+    year: "2024",
+    status: "Live",
+    featured: false,
+  },
+  {
+    title: "Green Thumb Foundation",
+    description:
+      "Environmental sustainability platform promoting eco-friendly practices, green initiatives, and environmental awareness through interactive content and resources.",
+    url: "https://www.greenthumbfoundation.org",
+    tags: ["Next.js", "Environmental Tech", "Interactive Design", "SEO"],
+    year: "2024",
+    status: "Live",
+    featured: false,
+  },
+  {
+    title: "Gurukrupa Fire Services",
+    description:
+      "Professional fire safety services website featuring service catalog, emergency response systems, safety equipment showcase, and client management portal.",
+    url: "https://www.gurukrupafireservices.com",
+    tags: ["React", "Service Portal", "Emergency Systems", "Business Solutions"],
+    year: "2024",
+    status: "Live",
+    featured: false,
+  },
+  {
     title: "Start Business",
     description:
       "Service portal for company incorporation, GST registration, and trademark filing. Includes AI-powered service recommendations and real-time compliance tracking.",
@@ -49,12 +99,12 @@ export function ProjectsSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Showcasing real-world applications that demonstrate my full-stack development expertise
+            Showcasing diverse real-world applications across multiple industries - from social impact to business solutions
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {projects.map((project, index) => (
+          {projects.slice(0, 8).map((project, index) => (
             <Card
               key={index}
               className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-muted/50 bg-background/50 backdrop-blur-sm ${
