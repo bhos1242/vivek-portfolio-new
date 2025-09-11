@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, MapPin, Building, Briefcase, ChevronRight, Clock, Target } from "lucide-react"
+import { Calendar, MapPin, Building, Briefcase, ChevronRight, Clock, Target, ExternalLink } from "lucide-react"
 
 const experiences = [
   {
@@ -9,6 +9,7 @@ const experiences = [
     duration: "Jan 2025 – Present",
     location: "Pune, India",
     type: "Current",
+    website: "https://www.navibyte.in",
     achievements: [
       "Leading technical strategy and product development for innovative web solutions.",
       "Building scalable full-stack applications using modern technologies and best practices.",
@@ -21,6 +22,7 @@ const experiences = [
     duration: "2024 – Present",
     location: "Pune, India",
     type: "Current",
+    website: "https://www.abhyasika.online",
     achievements: [
       "Built a cloud-based study-space platform with real-time booking and automated payments.",
       "Integrated WhatsApp/SMS notifications and analytics dashboard for seat optimization.",
@@ -33,6 +35,7 @@ const experiences = [
     duration: "2023 – 2024",
     location: "Pune, India",
     type: "Previous",
+    website: "https://www.work4uservices.in",
     achievements: [
       "Founded and developed service-based business solutions for local enterprises.",
       "Managed end-to-end project delivery and client relationship management.",
@@ -93,9 +96,15 @@ export function ExperienceSection() {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
                         <Building className="h-5 w-5 text-primary flex-shrink-0" />
-                        <CardTitle className="text-xl text-primary group-hover:text-primary/80 transition-colors">
+                        <a 
+                          href={exp.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xl text-primary group-hover:text-primary/80 transition-colors hover:underline flex items-center gap-2 font-bold"
+                        >
                           {exp.company}
-                        </CardTitle>
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
                       </div>
                       <div className="flex items-center gap-2 ml-7">
                         <Briefcase className="h-4 w-4 text-muted-foreground" />
@@ -174,10 +183,16 @@ export function ExperienceSection() {
                           <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
                             <Building className="h-5 w-5 text-primary" />
                           </div>
-                          <div>
-                            <CardTitle className="text-xl text-primary group-hover:text-primary/80 transition-colors">
+                          <div className="flex-1">
+                            <a 
+                              href={exp.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xl text-primary group-hover:text-primary/80 transition-colors hover:underline flex items-center gap-2 font-bold"
+                            >
                               {exp.company}
-                            </CardTitle>
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
                             <p className="text-muted-foreground text-sm">{exp.position}</p>
                           </div>
                         </div>
