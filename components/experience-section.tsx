@@ -1,8 +1,22 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Building, Briefcase, ChevronRight, Clock, Target, ExternalLink } from "lucide-react"
+import { Dialog, DialogTrigger, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import Image from "next/image"
 
 const experiences = [
+  {
+    company: "Modern College of Arts, Science & Commerce",
+    position: "Industry Expert — Board of Studies",
+    duration: "2025 – Present",
+    location: "Pune, India",
+    type: "Current",
+    website: "https://www.moderncollegepune.edu.in",
+    achievements: [
+      "Appointed as Industry Expert on the Board of Studies to advise curriculum alignment with industry needs.",
+      "Collaborating with faculty to review course content, projects, and assessment methods for software engineering programs.",
+    ],
+  },
   {
     company: "Navibyte Innovations",
     position: "Co-Founder",
@@ -134,6 +148,23 @@ export function ExperienceSection() {
                         <span className="text-foreground text-sm leading-relaxed">{achievement}</span>
                       </div>
                     ))}
+
+                    {/* Appointment letter dialog for Board of Studies (first entry) */}
+                    {index === 0 && (
+                      <div className="mt-3">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <button className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary text-white text-sm hover:opacity-90 transition">View appointment letter</button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-3xl w-full p-4">
+                            <DialogTitle className="sr-only">Appointment Letter</DialogTitle>
+                            <div className="relative h-[60vh] w-full rounded overflow-hidden bg-white">
+                              <Image src="/iebos.jpg" alt="Appointment Letter - Industry Expert" fill className="object-contain" sizes="90vw" />
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -225,6 +256,22 @@ export function ExperienceSection() {
                             </span>
                           </div>
                         ))}
+                        {/* Appointment letter trigger for desktop (first entry) */}
+                        {index === 0 && (
+                          <div className="mt-4">
+                            <Dialog>
+                              <DialogTrigger asChild>
+                                <button className="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-primary text-white text-sm hover:opacity-90 transition">View appointment letter</button>
+                              </DialogTrigger>
+                              <DialogContent className="max-w-3xl w-full p-4">
+                                <DialogTitle className="sr-only">Appointment Letter</DialogTitle>
+                                <div className="relative h-[60vh] w-full rounded overflow-hidden bg-white">
+                                  <Image src="/iebos.jpg" alt="Appointment Letter - Industry Expert" fill className="object-contain" sizes="90vw" />
+                                </div>
+                              </DialogContent>
+                            </Dialog>
+                          </div>
+                        )}
                       </div>
                     </CardContent>
                   </Card>

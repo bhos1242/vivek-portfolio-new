@@ -51,7 +51,20 @@ const awards = [
     image: "/gallary/image copy 8.png",
     alt: "Award Certificate 9"
   }
+  ,
+  {
+    id: 10,
+    image: "/iebos.jpg",
+    alt: "Appointment Letter - Industry Expert (Modern College)"
+  }
 ]
+
+// Added recent uploads
+awards.push(
+  { id: 11, image: "/gallary/image.1.png", alt: "Award Certificate 11" },
+  { id: 12, image: "/gallary/image.2.png", alt: "Award Certificate 12" },
+  { id: 13, image: "/gallary/image.3.png", alt: "Award Certificate 13" }
+)
 
 export function AwardsGallerySection() {
   return (
