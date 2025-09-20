@@ -13,8 +13,10 @@ import { Navigation } from "@/components/navigation"
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      <main>
+      <header>
+        <Navigation />
+      </header>
+      <main role="main">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
