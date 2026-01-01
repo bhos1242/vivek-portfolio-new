@@ -9,6 +9,7 @@ import { AwardsGallerySection } from "@/components/awards-gallery-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <CertificationsSection />
         <AwardsGallerySection />
         <ContactSection />
+        <WhatsAppButton />
       </main>
       <Footer />
     </div>

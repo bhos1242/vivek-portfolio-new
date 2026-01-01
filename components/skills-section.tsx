@@ -68,7 +68,7 @@ const skillCategories: SkillCategory[] = [
     icon: <Brain className="h-5 w-5" />,
     skills: [
       "Team Collaboration",
-      "Communication", 
+      "Communication",
       "Leadership",
       "Problem-Solving",
       "Time Management",
@@ -79,52 +79,47 @@ const skillCategories: SkillCategory[] = [
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-background to-secondary/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <Badge variant="outline" className="mb-4 text-sm font-medium">
-            Skills & Technologies
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Technical Expertise
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise and professional capabilities
-          </p>
+    <section id="skills" className="app-section bg-background">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
+              Hard & Soft Skills
+            </Badge>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              Technical <span className="text-gradient">Versatility</span>
+            </h2>
+          </div>
         </div>
 
         <Tabs defaultValue="technical" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8 lg:mb-12 p-1 h-12">
-            <TabsTrigger value="technical" className="text-sm font-medium">Technical Skills</TabsTrigger>
-            <TabsTrigger value="soft" className="text-sm font-medium">Soft Skills</TabsTrigger>
+          <TabsList className="flex w-full max-w-xs mb-8 p-1 bg-muted/50 rounded-full h-10">
+            <TabsTrigger value="technical" className="flex-1 rounded-full text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Technical</TabsTrigger>
+            <TabsTrigger value="soft" className="flex-1 rounded-full text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Soft Skills</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="technical" className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+          <TabsContent value="technical">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
               {skillCategories.slice(0, 5).map((category, index) => (
-                <Card 
-                  key={index} 
-                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-muted/50 bg-background/50 backdrop-blur-sm"
+                <Card
+                  key={index}
+                  className="compact-card group border-none bg-muted/30"
                 >
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-primary text-lg flex items-center gap-3 group-hover:text-primary/80 transition-colors">
-                      <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <CardContent className="p-4 space-y-4">
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
                         {category.icon}
                       </div>
-                      {category.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
+                      <h3 className="font-bold text-sm tracking-tight">{category.title}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
                       {category.skills.map((skill, skillIndex) => (
-                        <Badge
+                        <span
                           key={skillIndex}
-                          variant="secondary"
-                          className="text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                          className="text-[10px] font-bold px-2 py-0.5 bg-background/50 border border-border/50 rounded-md uppercase tracking-tighter"
                         >
                           {skill}
-                        </Badge>
+                        </span>
                       ))}
                     </div>
                   </CardContent>
@@ -133,25 +128,19 @@ export function SkillsSection() {
             </div>
           </TabsContent>
 
-          <TabsContent value="soft" className="space-y-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-              <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-muted/50 bg-background/50 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-primary text-lg flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
+          <TabsContent value="soft">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Card className="compact-card bg-muted/30 border-none">
+                <CardContent className="p-4 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-primary/10 rounded-xl text-primary">
                       {skillCategories[5].icon}
                     </div>
-                    {skillCategories[5].title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
+                    <h3 className="font-bold text-lg">{skillCategories[5].title}</h3>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {skillCategories[5].skills.map((skill, skillIndex) => (
-                      <Badge
-                        key={skillIndex}
-                        variant="secondary"
-                        className="text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
-                      >
+                      <Badge key={skillIndex} variant="secondary" className="rounded-full text-[10px] uppercase font-black px-3 py-1">
                         {skill}
                       </Badge>
                     ))}
@@ -159,31 +148,26 @@ export function SkillsSection() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-muted/50 bg-background/50 backdrop-blur-sm">
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-primary text-lg flex items-center gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
+              <Card className="compact-card bg-primary/5 border-primary/20">
+                <CardContent className="p-4 space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-primary/20 rounded-xl text-primary">
                       <Zap className="h-5 w-5" />
                     </div>
-                    Key Achievements
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                    <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm font-medium">Co-founded Navibyte Innovations</span>
+                    <h3 className="font-bold text-lg">Key Strengths</h3>
                   </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                    <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm font-medium">Led multiple full-stack projects</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                    <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm font-medium">Agile methodology expertise</span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                    <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm font-medium">Cross-functional team leadership</span>
+                  <div className="space-y-2">
+                    {[
+                      "Technical Leadership",
+                      "Full-Stack Architecture",
+                      "Product Strategy",
+                      "Client Relationship"
+                    ].map((strength, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span className="text-sm font-medium">{strength}</span>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>

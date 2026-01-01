@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Github, Linkedin, ExternalLink, ChevronDown } from "lucide-react"
+import { Mail, Github, Linkedin, ExternalLink, ChevronDown, Sparkles } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
@@ -13,119 +13,96 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 pt-16 sm:pt-20 relative overflow-hidden"
+      className="min-h-[85vh] flex flex-col items-center justify-center pt-16 pb-10 sm:pt-24 sm:pb-12 relative overflow-hidden bg-background"
     >
-      {/* Simplified background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/20 to-accent/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-tl from-accent/20 to-primary/10 rounded-full blur-3xl"></div>
+      {/* Dynamic Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/10 blur-[120px] rounded-full" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1 flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center w-full">
-          <div className="text-center lg:text-left order-2 lg:order-1 space-y-6 lg:space-y-8">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          <div className="lg:col-span-7 text-center lg:text-left space-y-8 animate-in">
             <div className="space-y-4">
-              <Badge variant="secondary" className="mb-4 text-sm px-6 py-3 rounded-full bg-primary/10 text-primary border-primary/20 shadow-lg">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                Available for opportunities
+              <Badge variant="secondary" className="px-4 py-2 rounded-full bg-primary/10 text-primary border-primary/20 shadow-sm animate-pulse">
+                <Sparkles className="w-3.5 h-3.5 mr-2" />
+                Available for new projects
               </Badge>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-balance leading-tight">
-                Hi, I'm{" "}
-                <span className="text-green-600 font-extrabold">
-                  Vivek Bhos
-                </span>
+
+              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black leading-[1.1] tracking-tight">
+                Crafting <span className="text-gradient">Digital</span> Experiences
               </h1>
-              
-              <div className="text-lg sm:text-xl md:text-2xl text-muted-foreground space-y-2 max-w-2xl">
-                <p className="font-medium">Full-Stack Web Developer</p>
-                <p className="text-base sm:text-lg">Co-Founder • Navibyte Innovations • MCA Student</p>
-              </div>
+
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Hi, I'm <span className="font-bold text-foreground">Vivek Bhos</span>. A Full-Stack Developer specializing in building high-performance, compact, and beautiful web applications.
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
                 size="lg"
                 asChild
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg transition-colors duration-300 text-base px-8 py-4 rounded-full font-semibold"
+                className="rounded-full px-8 py-6 text-lg shadow-xl hover-lift bg-primary hover:bg-primary/90"
               >
                 <a href="#contact">
-                  <Mail className="mr-3 h-5 w-5" />
-                  Let's Connect
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get in Touch
                 </a>
               </Button>
-            </div>
-
-            <div className="flex gap-4 justify-center lg:justify-start pt-2">
-              <Button 
-                variant="outline" 
-                size="icon" 
-                asChild 
-                className="transition-colors duration-300 w-12 h-12 rounded-full border-2"
-              >
-                <a href="https://github.com/vivekbhos" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon" 
-                asChild 
-                className="transition-colors duration-300 w-12 h-12 rounded-full border-2"
-              >
-                <a href="https://linkedin.com/in/vivekbhos" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon" 
-                asChild 
-                className="transition-colors duration-300 w-12 h-12 rounded-full border-2"
-              >
-                <a href="https://navibyte.in" target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-5 w-5" />
-                </a>
-              </Button>
+              <div className="flex gap-3 justify-center">
+                {[
+                  { icon: Github, href: "https://github.com/vivekbhos" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/vivekbhos" },
+                  { icon: ExternalLink, href: "https://navibyte.in" }
+                ].map((social, i) => (
+                  <Button
+                    key={i}
+                    variant="outline"
+                    size="icon"
+                    asChild
+                    className="w-14 h-14 rounded-full border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all hover-lift"
+                  >
+                    <a href={social.href} target="_blank" rel="noopener noreferrer">
+                      <social.icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="relative">
-              {/* Simplified background */}
-              <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-primary/20 via-primary/10 to-accent/20 rounded-3xl flex items-center justify-center shadow-xl">
-                
-                <div className="relative w-72 h-72 sm:w-88 sm:h-88 lg:w-[460px] lg:h-[460px] rounded-2xl overflow-hidden border-4 border-white/20 shadow-lg">
-                  <Image
-                    src="/hero.png"
-                    alt="Vivek Bhos - Full Stack Developer"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 640px) 288px, (max-width: 1024px) 352px, 460px"
-                  />
-                </div>
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative group">
+              {/* Image Container with Custom Shape */}
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-[2rem] overflow-hidden rotate-3 group-hover:rotate-0 transition-all duration-500 shadow-2xl border-8 border-white dark:border-slate-900">
+                <Image
+                  src="/hero.png"
+                  alt="Vivek Bhos"
+                  fill
+                  className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
+                  priority
+                />
               </div>
-              
-              {/* Simplified floating elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-accent rounded-full"></div>
+              {/* Floating Decorative Elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse delay-700" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Simplified scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <Button
-          variant="ghost"
-          size="icon"
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:block">
+        <button
           onClick={scrollToAbout}
-          className="rounded-full hover:bg-primary/10 transition-colors duration-300"
+          className="p-3 rounded-full glass-morphism hover:bg-primary/10 transition-colors animate-bounce shadow-lg"
         >
-          <ChevronDown className="h-6 w-6" />
-        </Button>
+          <ChevronDown className="h-5 w-5 text-muted-foreground" />
+        </button>
       </div>
     </section>
   )
 }
+

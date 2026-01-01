@@ -27,87 +27,44 @@ const education = [
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-secondary/15 via-background to-secondary/5">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <Badge variant="outline" className="mb-4 text-sm font-medium">
-            Educational Background
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Academic Excellence
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            A solid foundation in computer applications and ongoing pursuit of advanced knowledge
-          </p>
+    <section id="education" className="app-section bg-background">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
+              Degrees & Certs
+            </Badge>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              Academic <span className="text-gradient">Base</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent hidden md:block"></div>
-          
-          <div className="space-y-8 lg:space-y-12">
-            {education.map((edu, index) => (
-              <div key={index} className="relative">
-                {/* Timeline Node */}
-                <div className="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full ring-4 ring-primary/20 ring-offset-4 ring-offset-background hidden md:block z-10"></div>
-                
-                {/* Education Card */}
-                <div className="md:ml-20">
-                  <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-muted/50 bg-background/50 backdrop-blur-sm overflow-hidden">
-                    <div className="relative">
-                      {/* Year Badge */}
-                      <div className="absolute top-4 right-4 z-10">
-                        <Badge variant="secondary" className="bg-primary/10 text-primary font-semibold">
-                          {edu.period}
-                        </Badge>
-                      </div>
-                      
-                      <CardHeader className="pb-4">
-                        <div className="flex items-start gap-4 pr-20">
-                          <div className="p-3 rounded-lg flex-shrink-0 bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                            <GraduationCap className="h-6 w-6 text-primary" />
-                          </div>
-                          
-                          <div className="flex-1 min-w-0">
-                            <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2 leading-tight">
-                              {edu.degree}
-                            </CardTitle>
-                            <div className="flex items-center gap-2 text-muted-foreground">
-                              <MapPin className="h-4 w-4 flex-shrink-0" />
-                              <p className="font-medium">{edu.institution}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </CardHeader>
-                      
-                      {/* Progress Indicator for Current Education */}
-                      {index === 0 && (
-                        <CardContent className="pt-0">
-                          <div className="p-4 bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg border border-primary/20">
-                            <div className="flex items-center gap-2 text-primary text-sm font-medium">
-                              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                              Currently Pursuing
-                            </div>
-                          </div>
-                        </CardContent>
-                      )}
-                    </div>
-                  </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {education.map((edu, index) => (
+            <Card key={index} className="compact-card group border-none bg-muted/30">
+              <CardContent className="p-4 flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shrink-0">
+                  <GraduationCap className="w-5 h-5" />
                 </div>
-                
-                {/* Mobile Timeline Connector */}
-                {index < education.length - 1 && (
-                  <div className="md:hidden flex justify-center py-4">
-                    <div className="w-0.5 h-8 bg-gradient-to-b from-primary to-primary/30"></div>
+                <div className="space-y-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-black text-base leading-tight truncate group-hover:text-primary transition-colors">
+                      {edu.degree}
+                    </h3>
+                    {index === 0 && (
+                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0" title="Active" />
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-          
-          {/* Timeline End */}
-          <div className="absolute left-8 bottom-0 w-4 h-4 bg-gradient-to-br from-primary/30 to-transparent rounded-full hidden md:block"></div>
+                  <p className="text-xs font-bold text-muted-foreground truncate">{edu.institution}</p>
+                  <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-muted-foreground/60 pt-1">
+                    <Calendar className="w-3 h-3" />
+                    {edu.period}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

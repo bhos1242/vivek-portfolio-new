@@ -68,45 +68,45 @@ awards.push(
 
 export function AwardsGallerySection() {
   return (
-    <section id="awards" className="py-16 sm:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <Badge variant="outline" className="mb-4 text-sm font-medium">
-            <Trophy className="mr-2 h-4 w-4" />
-            Awards & Recognition
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Achievements
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-500 to-amber-600 mx-auto"></div>
+    <section id="awards" className="app-section bg-muted/20">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
+              <Trophy className="mr-2 h-3.5 w-3.5" />
+              Achievements
+            </Badge>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              Recognition & <span className="text-gradient">Awards</span>
+            </h2>
+          </div>
         </div>
 
-        {/* Clean Image Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {awards.map((award) => (
             <Dialog key={award.id}>
               <DialogTrigger asChild>
-                <div className="group cursor-pointer rounded-xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="compact-card group cursor-pointer border-none bg-background p-0 h-48 sm:h-64">
+                  <div className="relative w-full h-full">
                     <Image
                       src={award.image}
                       alt={award.alt}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-primary/10 transition-colors duration-300" />
                   </div>
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-5xl w-full h-[85vh] p-2">
+              <DialogContent className="max-w-5xl w-full h-[85vh] p-2 bg-transparent border-none">
                 <DialogTitle className="sr-only">{award.alt}</DialogTitle>
-                <div className="relative w-full h-full rounded-lg overflow-hidden bg-white">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-background/80 backdrop-blur-xl border border-white/20">
                   <Image
                     src={award.image}
                     alt={award.alt}
                     fill
-                    className="object-contain"
+                    className="object-contain p-4"
                     sizes="90vw"
                   />
                 </div>

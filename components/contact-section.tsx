@@ -86,7 +86,7 @@ export function ContactSection() {
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      label: "LinkedIn", 
+      label: "LinkedIn",
       href: "https://linkedin.com/in/vivekbhos",
       color: "hover:bg-blue-50 dark:hover:bg-blue-900/20"
     },
@@ -100,12 +100,12 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <Badge variant="outline" className="mb-4 text-sm font-medium">
             Get In Touch
           </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance break-words">
             Let's Build Something Amazing
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-6"></div>
@@ -253,10 +253,10 @@ export function ContactSection() {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full sm:w-auto group" 
-                    disabled={isSubmitting} 
+                  <Button
+                    type="submit"
+                    className="w-full sm:w-auto group"
+                    disabled={isSubmitting}
                     size="lg"
                   >
                     {isSubmitting ? (

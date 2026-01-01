@@ -31,89 +31,59 @@ const certifications = [
 
 export function CertificationsSection() {
   return (
-    <section id="certifications" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-background via-secondary/5 to-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <Badge variant="outline" className="mb-4 text-sm font-medium">
-            Professional Certifications
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-balance">
-            Continuous Learning
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground text-pretty max-w-2xl mx-auto">
-            Committed to staying current with industry standards and emerging technologies
-          </p>
+    <section id="certifications" className="app-section bg-background">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div className="space-y-4 max-w-2xl">
+            <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
+              <Award className="mr-2 h-3.5 w-3.5" />
+              Credentials
+            </Badge>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              Curated <span className="text-gradient">Acquisitions</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-muted/50 bg-background/50 backdrop-blur-sm"
-            >
-              <CardHeader className="pb-4">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                    <Award className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
+            <Card key={index} className="compact-card group border-none bg-muted/30">
+              <CardContent className="p-4 space-y-4">
+                <div className="flex items-start justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shrink-0">
+                    <Award className="w-5 h-5" />
                   </div>
                   {cert.verified && (
-                    <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200">
-                      <CheckCircle className="w-3 h-3 mr-1" />
+                    <Badge variant="secondary" className="bg-green-500/10 text-green-600 border-none text-[8px] font-black uppercase px-2 py-0.5">
                       Verified
                     </Badge>
                   )}
                 </div>
-                
-                <CardTitle className="text-lg text-primary group-hover:text-primary/80 transition-colors leading-tight">
-                  {cert.title}
-                </CardTitle>
-                
-                <div className="space-y-2 text-sm">
-                  <p className="text-muted-foreground font-medium">{cert.issuer}</p>
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-3 w-3 text-muted-foreground" />
-                      <span className="text-muted-foreground">{cert.year}</span>
-                    </div>
-                    <Badge variant="outline" className="text-xs">
-                      {cert.category}
-                    </Badge>
-                  </div>
+
+                <div className="space-y-2">
+                  <h3 className="font-black text-base leading-tight group-hover:text-primary transition-colors">
+                    {cert.title}
+                  </h3>
+                  <p className="text-xs font-bold text-muted-foreground">{cert.issuer}</p>
                 </div>
-              </CardHeader>
-              
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  <div className="text-xs text-muted-foreground">
-                    <span className="font-medium">Credential ID: </span>
-                    <span className="font-mono">{cert.credentialId}</span>
+
+                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-muted-foreground/60">
+                  <div className="flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" />
+                    {cert.year}
                   </div>
-                  
-                  <div className="flex gap-2">
-                    <button className="flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors font-medium">
-                      <ExternalLink className="h-3 w-3" />
-                      View Certificate
-                    </button>
-                  </div>
+                  <div className="text-mono truncate">{cert.credentialId}</div>
+                </div>
+
+                <div className="pt-2">
+                  <button className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-tighter text-primary hover:opacity-80 transition-opacity">
+                    <ExternalLink className="w-3 h-3" />
+                    Verify Credential
+                  </button>
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-12 lg:mt-16 text-center">
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border border-primary/20">
-            <h3 className="text-xl font-semibold mb-2">Commitment to Excellence</h3>
-            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              I regularly update my skills through courses, certifications, and hands-on projects to stay at the forefront of technology
-            </p>
-            <Badge variant="outline" className="px-4 py-2">
-              <Award className="mr-2 h-4 w-4" />
-              Always Learning
-            </Badge>
-          </div>
         </div>
       </div>
     </section>

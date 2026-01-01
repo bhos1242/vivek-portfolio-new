@@ -41,7 +41,7 @@ export function Footer() {
 
   return (
     <footer className="bg-gradient-to-t from-secondary/20 to-background border-t border-border/50 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -54,7 +54,7 @@ export function Footer() {
                 <h3 className="text-xl font-bold text-foreground">Vivek Bhos</h3>
               </div>
               <p className="text-muted-foreground max-w-md leading-relaxed">
-                Full-Stack Developer & Co-Founder passionate about building innovative 
+                Full-Stack Developer & Co-Founder passionate about building innovative
                 web solutions that make a difference. Always learning, always creating.
               </p>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -90,7 +90,7 @@ export function Footer() {
                 <p className="text-sm text-muted-foreground">
                   Available for freelance projects
                 </p>
-                <a 
+                <a
                   href="mailto:bhosvivek123@gmail.com"
                   className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
                 >
