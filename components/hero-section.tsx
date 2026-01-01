@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Github, Linkedin, ExternalLink, ChevronDown, Sparkles } from "lucide-react"
+import { Mail, Github, Linkedin, ExternalLink, ChevronDown, Sparkles, ShieldCheck } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
@@ -39,6 +39,19 @@ export function HeroSection() {
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Hi, I'm <span className="font-bold text-foreground">Vivek Bhos</span>. A Full-Stack Developer specializing in building high-performance, compact, and beautiful web applications.
               </p>
+
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-muted-foreground/80">
+                  <Badge variant="outline" className="rounded-full border-primary/20 bg-primary/5 text-primary py-1 px-3">
+                    <Github className="w-3 h-3 mr-1.5" />
+                    20+ Projects
+                  </Badge>
+                  <Badge variant="outline" className="rounded-full border-accent/20 bg-accent/5 text-accent py-1 px-3">
+                    <ShieldCheck className="w-3 h-3 mr-1.5" />
+                    50+ Certificates
+                  </Badge>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

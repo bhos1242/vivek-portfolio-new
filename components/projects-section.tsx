@@ -1,57 +1,135 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Calendar, Star, ArrowRight, Share2 } from "lucide-react"
+import { ExternalLink, Github, Star, ArrowRight, Share2 } from "lucide-react"
 
 const projects = [
   {
     title: "Donate Aid Society",
-    description:
-      "Platform for charitable donations with secure online payment gateways, intuitive UI/UX, and Prisma-backed database.",
+    description: "Platform for charitable donations with secure online payment gateways, intuitive UI/UX, and Prisma-backed database.",
     url: "https://donateaidsociety.vercel.app/",
     tags: ["React", "Next.js", "Prisma"],
-    year: "2024",
-    status: "Live",
+
     featured: true,
+  },
+  {
+    title: "PracticeStacks",
+    description: "Enterprise-grade proposal and compliance management platform with AI-powered automation, multi-currency support, and advanced analytics for professional service firms.",
+    url: "https://www.practicestacks.in/",
+    tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "AI/ML"],
+
+    featured: true,
+  },
+  {
+    title: "Kaydyach Ani Faydyach",
+    description: "Comprehensive platform providing detailed information about legal rights, government schemes, and citizen benefits.",
+    url: "https://kaydyanch-ani-faydyach.vercel.app/",
+    tags: ["Next.js", "React.js", "TailwindCSS", "Node.js", "MongoDB"],
+
+    featured: true,
+  },
+  {
+    title: "Megaaplex",
+    description: "A modern real estate platform for property discovery, listings, and lead management. Built with Next.js and Tailwind CSS.",
+    url: "https://www.megaaplex.com/",
+    tags: ["Next.js", "React.js", "TailwindCSS", "Node.js", "MongoDB"],
+
+    featured: true,
+  },
+  {
+    title: "DemandToKaro",
+    description: "Hyperlocal demand aggregation platform enabling users to request products and services and connect with local vendors.",
+    url: "https://www.demandtokaro.com/",
+    tags: ["Next.js", "React.js", "Node.js", "MongoDB"],
+
+    featured: false,
+  },
+  {
+    title: "Green Thumb Foundation",
+    description: "Environmental conservation platform focused on tree planting initiatives, sustainability education, and community engagement.",
+    url: "https://www.greenthumbfoundation.org/",
+    tags: ["Next.js", "React.js", "Node.js", "MongoDB"],
+
+    featured: false,
+  },
+  {
+    title: "Epicarp Nature Care",
+    description: "Sustainable e-commerce platform offering eco-friendly products with comprehensive environmental impact tracking.",
+    url: "https://www.epicarpnaturecare.com/",
+    tags: ["Next.js", "Node.js", "Razorpay"],
+
+    featured: false,
+  },
+  {
+    title: "Start Business Consulting",
+    description: "Business strategy consulting platform offering market analysis, growth solutions, and comprehensive planning services.",
+    url: "https://v0-start-business-demo-website.vercel.app/",
+    tags: ["Next.js", "React.js", "MongoDB"],
+
+    featured: false,
+  },
+  {
+    title: "Pixel Perfects",
+    description: "Creative design agency platform showcasing portfolio, services, and client testimonials with a focus on UX.",
+    url: "https://pixelperfects.in/",
+    tags: ["Next.js", "React.js", "TailwindCSS"],
+
+    featured: false,
+  },
+  {
+    title: "Guru Krupa Fire Services",
+    description: "Professional fire safety services platform with equipment showcase and emergency consultation booking.",
+    url: "https://www.gurukrupafireservices.com/",
+    tags: ["Next.js", "React.js", "Node.js"],
+
+    featured: false,
   },
   {
     title: "4 Star Travels",
-    description:
-      "Travel booking platform featuring curated domestic & international tour packages, secure payment APIs.",
-    url: "https://www.4startravels.com",
-    tags: ["Next.js", "TypeScript", "Payment API"],
-    year: "2024",
-    status: "Live",
-    featured: true,
-  },
-  {
-    title: "Sneh Chhaya Foundation",
-    description:
-      "Non-profit organization website for social welfare initiatives, featuring donation management.",
-    url: "https://www.snehchhaya.org",
-    tags: ["React", "Community Platform", "CMS"],
-    year: "2024",
-    status: "Live",
+    description: "Travel agency platform offering personalized travel planning, booking services, and customer support.",
+    url: "https://www.4startravels.com/",
+    tags: ["Next.js", "React.js", "Node.js"],
+
     featured: false,
   },
   {
-    title: "Free QR Code Generator",
-    description:
-      "Powerful online QR code generation tool with customizable designs and multiple format support.",
-    url: "https://www.freeqrcodegenerator.shop",
-    tags: ["Next.js", "QR Generation", "API"],
-    year: "2024",
-    status: "Live",
+    title: "SnehChhaya",
+    description: "Comprehensive platform for child welfare organization providing care, education, and support to underprivileged children.",
+    url: "https://www.snehchhaya.org/",
+    tags: ["Next.js", "React.js", "MongoDB"],
+
     featured: false,
   },
   {
-    title: "Start Business",
-    description:
-      "Service portal for company incorporation, GST registration, and trademark filing.",
-    url: "https://www.startbusiness.co.in",
-    tags: ["React", "AI Integration", "Real-time Tracking"],
-    year: "2024",
-    status: "Live",
+    title: "Godham Group",
+    description: "Multi-business group platform showcasing agriculture, sustainability initiatives, and diverse business operations.",
+    url: "https://www.godhamgroup.in/",
+    tags: ["Next.js", "React.js", "MongoDB"],
+
+    featured: false,
+  },
+  {
+    title: "Varad Dental Clinic",
+    description: "Modern dental clinic platform providing information on services, appointment booking, and patient resources.",
+    url: "https://varad-dental-clinic.vercel.app/",
+    tags: ["Next.js", "React.js", "MongoDB"],
+
+    featured: false,
+  },
+  {
+    title: "Biztree Accounting",
+    description: "Comprehensive accounting and financial management platform with automated reporting and expense tracking.",
+    url: "https://v0-biztree.vercel.app/",
+    tags: ["Next.js", "React.js", "MongoDB"],
+
+    featured: false,
+  },
+  {
+    title: "Rainbow HR Consulting",
+    description: "Professional HR consulting platform specializing in talent acquisition, employee engagement, and development.",
+    url: "https://rainbow-hr-consulting.vercel.app/",
+    tags: ["Next.js", "React.js", "MongoDB"],
+
     featured: false,
   },
 ]
@@ -98,15 +176,9 @@ export function ProjectsSection() {
               </div>
 
               <CardHeader className="p-0 mb-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
-                    <Calendar className="w-3 h-3" />
-                    {project.year} • {project.status}
-                  </div>
-                  <CardTitle className={`${project.featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"} font-black`}>
-                    {project.title}
-                  </CardTitle>
-                </div>
+                <CardTitle className={`${project.featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"} font-black`}>
+                  {project.title}
+                </CardTitle>
               </CardHeader>
 
               <CardContent className="p-0 space-y-4">
