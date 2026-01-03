@@ -74,7 +74,7 @@ const skillCategories: SkillCategory[] = [
     icon: <Brain className="h-5 w-5" />,
     skills: [
       "Team Collaboration",
-      "Communication", 
+      "Communication",
       "Leadership",
       "Problem-Solving",
       "Time Management",
@@ -109,8 +109,8 @@ export function SkillsSection() {
           <TabsContent value="technical" className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
               {skillCategories.slice(0, 5).map((category, index) => (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-muted/50 bg-background/50 backdrop-blur-sm"
                 >
                   <CardHeader className="pb-4">
@@ -130,8 +130,8 @@ export function SkillsSection() {
                               <span className="text-sm font-medium">{skill.name}</span>
                               <span className="text-xs text-muted-foreground">{skill.level}%</span>
                             </div>
-                            <Progress 
-                              value={skill.level} 
+                            <Progress
+                              value={skill.level}
                               className="h-2 bg-muted"
                             />
                           </div>
@@ -189,7 +189,7 @@ export function SkillsSection() {
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
                     <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm font-medium">Co-founded Navibyte Innovations</span>
+                    <span className="text-sm font-medium">Co-founded Navibyte Innovations Private Limited</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
                     <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
@@ -202,39 +202,6 @@ export function SkillsSection() {
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
                     <div className="w-3 h-3 bg-primary rounded-full flex-shrink-0"></div>
                     <span className="text-sm font-medium">Cross-functional team leadership</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
-    </section>
-  )
-}
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-primary text-lg">Key Achievements</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">Co-founded Navibyte Innovations</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">Led multiple full-stack projects</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">Agile methodology expertise</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-sm">Cross-functional team leadership</span>
                   </div>
                 </CardContent>
               </Card>

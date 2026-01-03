@@ -8,7 +8,7 @@ export function AboutSection() {
     {
       icon: <Building className="h-5 w-5" />,
       title: "Co-Founder",
-      description: "Navibyte Innovations"
+      description: "Navibyte Innovations Private Limited"
     },
     {
       icon: <GraduationCap className="h-5 w-5" />,
@@ -44,7 +44,7 @@ export function AboutSection() {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a full-stack developer and entrepreneur based in Pune, India. As the Co-Founder of <a href="https://www.navibyte.in" target="_blank" rel="noopener noreferrer" className="text-foreground font-bold underline decoration-primary/30 underline-offset-4 hover:text-primary transition-colors">Navibyte Innovations</a>, I focus on delivering high-quality digital solutions that solve real-world problems.
+                I'm a full-stack developer and entrepreneur based in Pune, India. As the Co-Founder of <a href="https://www.navibyte.in" target="_blank" rel="noopener noreferrer" className="text-foreground font-bold underline decoration-primary/30 underline-offset-4 hover:text-primary transition-colors">Navibyte Innovations Private Limited</a>, I focus on delivering high-quality digital solutions that solve real-world problems.
               </p>
               <p>
                 Currently pursuing my Master's in Computer Applications, I mix academic foundations with hands-on experience, building platforms like <a href="https://www.abhyasika.online" target="_blank" rel="noopener noreferrer" className="text-foreground font-bold hover:text-primary transition-colors">My Abhyasika</a>. I specialize in the <span className="text-foreground font-semibold">React & Next.js ecosystem</span>, focusing on clean, performant, and user-centric web applications.

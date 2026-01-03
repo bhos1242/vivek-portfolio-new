@@ -8,7 +8,7 @@ export function StructuredData() {
     "url": baseUrl,
     "image": `${baseUrl}/hero.png`,
     "jobTitle": "Full-Stack Web Developer",
-    "description": "Full-Stack Web Developer and Co-Founder of Navibyte Innovations. MCA student at Modern College of Engineering, Pune. Industry Expert on Board of Studies.",
+    "description": "Full-Stack Web Developer and Co-Founder of Navibyte Innovations Private Limited. MCA student at Modern College of Engineering, Pune. Industry Expert on Board of Studies.",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "Modern College of Engineering",
@@ -22,7 +22,7 @@ export function StructuredData() {
     "worksFor": [
       {
         "@type": "Organization",
-        "name": "Navibyte Innovations Pvt. Ltd.",
+        "name": "Navibyte Innovations Private Limited",
         "url": "https://www.navibyte.in",
         "description": "Leading technical strategy and product development for innovative web solutions"
       },
@@ -36,7 +36,7 @@ export function StructuredData() {
     "founder": [
       {
         "@type": "Organization",
-        "name": "Navibyte Innovations Pvt. Ltd.",
+        "name": "Navibyte Innovations Private Limited",
         "url": "https://www.navibyte.in"
       },
       {

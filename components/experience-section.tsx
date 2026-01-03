@@ -19,7 +19,7 @@ const experiences = [
     ],
   },
   {
-    company: "Navibyte Innovations",
+    company: "Navibyte Innovations Private Limited",
     position: "Co-Founder",
     duration: "Jan 2025 – Present",
     location: "Pune, India",

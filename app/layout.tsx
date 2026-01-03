@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "JavaScript",
     "Node.js",
     "Co-Founder",
-    "Navibyte Innovations",
+    "Navibyte Innovations Private Limited",
     "Modern College Pune",
     "MCA Student",
     "Portfolio",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     title: 'Vivek Bhos – Full-Stack Web Developer & Co-Founder',
-    description: 'Portfolio of Vivek Bhos, Full-Stack Developer and Co-Founder of Navibyte Innovations. Building scalable web solutions and delivering tech talks.',
+    description: 'Portfolio of Vivek Bhos, Full-Stack Developer and Co-Founder of Navibyte Innovations Private Limited. Building scalable web solutions and delivering tech talks.',
     siteName: 'Vivek Bhos Portfolio',
     images: [
       {
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Vivek Bhos – Full-Stack Web Developer & Co-Founder',
-    description: 'Portfolio of Vivek Bhos, Full-Stack Developer and Co-Founder of Navibyte Innovations. Building scalable web solutions.',
+    description: 'Portfolio of Vivek Bhos, Full-Stack Developer and Co-Founder of Navibyte Innovations Private Limited. Building scalable web solutions.',
     images: ['/hero.png'],
     creator: '@bhos1242',
   },

@@ -4,7 +4,7 @@ import { Calendar, MapPin, Building, Briefcase } from "lucide-react"
 
 const experiences = [
   {
-    company: "Navibyte Innovations",
+    company: "Navibyte Innovations Private Limited",
     position: "Co-Founder",
     duration: "Jan 2025 – Present",
     location: "Pune, India",
@@ -67,9 +67,8 @@ export function ExperienceSection() {
               <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Timeline dot */}
                 <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 z-10">
-                  <div className={`w-4 h-4 rounded-full border-4 border-background ${
-                    exp.type === 'Current' ? 'bg-primary shadow-lg shadow-primary/30' : 'bg-muted'
-                  }`}>
+                  <div className={`w-4 h-4 rounded-full border-4 border-background ${exp.type === 'Current' ? 'bg-primary shadow-lg shadow-primary/30' : 'bg-muted'
+                    }`}>
                     {exp.type === 'Current' && (
                       <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-30"></div>
                     )}
@@ -96,7 +95,7 @@ export function ExperienceSection() {
                             <p className="text-lg font-semibold text-foreground">{exp.position}</p>
                           </div>
                         </div>
-                        
+
                         <div className="flex flex-col gap-2 text-sm">
                           <div className="flex items-center text-muted-foreground">
                             <Calendar className="mr-2 h-4 w-4" />
@@ -109,7 +108,7 @@ export function ExperienceSection() {
                         </div>
                       </div>
                     </CardHeader>
-                    
+
                     <CardContent>
                       <ul className="space-y-3">
                         {exp.achievements.map((achievement, achievementIndex) => (
