@@ -1,66 +1,76 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useCallback, useEffect } from "react"
+import Image from "next/image"
+import useEmblaCarousel from "embla-carousel-react"
+import Autoplay from "embla-carousel-autoplay"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
     ShieldCheck,
-    ExternalLink,
     Download,
+    Maximize2,
+    Grid,
+    Columns,
     ChevronLeft,
     ChevronRight,
-    Maximize2,
-    FileText,
-    Search,
+    X,
     ZoomIn,
-    ZoomOut
+    Pause,
+    Play
 } from "lucide-react"
-import { Document, Page, pdfjs } from "react-pdf"
-
-// Set up worker for react-pdf
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
-
-import "react-pdf/dist/Page/AnnotationLayer.css"
-import "react-pdf/dist/Page/TextLayer.css"
+import { cn } from "@/lib/utils"
 
 export function CertificateVaultSection() {
-    const [numPages, setNumPages] = useState<number>(0)
-    const [pageNumber, setPageNumber] = useState<number>(1)
-    const [scale, setScale] = useState<number>(1.0)
-    const [isMounted, setIsMounted] = useState(false)
-    const [containerWidth, setContainerWidth] = useState<number>(0)
-    const containerRef = useRef<HTMLDivElement>(null)
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+        Autoplay({ delay: 3000, stopOnInteraction: false })
+    ])
+    const [isGridView, setIsGridView] = useState(false)
+    const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+    const [selectedIndex, setSelectedIndex] = useState(0)
+    const [isPlaying, setIsPlaying] = useState(true)
+
+    // Generate paths for 57 images: page-0001.jpg to page-0057.jpg
+    const certificates = Array.from({ length: 57 }, (_, i) => ({
+        id: i + 1,
+        src: `/certificates/vivek_all_certificates_page-${String(i + 1).padStart(4, '0')}.jpg`,
+        alt: `Certificate Page ${i + 1}`
+    }))
+
+    const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])
+    const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi])
+
+    const toggleAutoplay = useCallback(() => {
+        if (!emblaApi) return
+        const autoplay = emblaApi.plugins().autoplay
+        if (!autoplay) return
+
+        if (autoplay.isPlaying()) {
+            autoplay.stop()
+            setIsPlaying(false)
+        } else {
+            autoplay.play()
+            setIsPlaying(true)
+        }
+    }, [emblaApi])
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return
+        setSelectedIndex(emblaApi.selectedScrollSnap())
+    }, [emblaApi])
 
     useEffect(() => {
-        setIsMounted(true)
-
-        const updateWidth = () => {
-            if (containerRef.current) {
-                setContainerWidth(containerRef.current.offsetWidth)
-            }
-        }
-
-        updateWidth()
-        window.addEventListener("resize", updateWidth)
-        return () => window.removeEventListener("resize", updateWidth)
-    }, [])
-
-    function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
-        setNumPages(numPages)
-    }
-
-    const changePage = (offset: number) => {
-        setPageNumber(prevPageNumber => Math.min(Math.max(1, prevPageNumber + offset), numPages))
-    }
-
-    const zoomIn = () => setScale(prev => Math.min(prev + 0.2, 2.0))
-    const zoomOut = () => setScale(prev => Math.max(prev - 0.2, 0.5))
-
-    if (!isMounted) return null
+        if (!emblaApi) return
+        onSelect()
+        emblaApi.on("select", onSelect)
+        emblaApi.on("autoplay:stop", () => setIsPlaying(false))
+        emblaApi.on("autoplay:play", () => setIsPlaying(true))
+    }, [emblaApi, onSelect])
 
     return (
         <section id="vault" className="app-section bg-muted/30">
             <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
+                {/* Section Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
                     <div className="space-y-4 max-w-2xl">
                         <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
@@ -71,115 +81,138 @@ export function CertificateVaultSection() {
                             Certificate <span className="text-gradient">Vault</span>
                         </h2>
                         <p className="text-lg text-muted-foreground font-medium">
-                            Interactive archive of 50+ certificates. Use the controls below to navigate through all 60 pages.
+                            Comprehensive archive of 57 verified certificates from top institutions.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap gap-3">
+                        <div className="flex bg-muted rounded-full p-1 border border-border/50">
+                            <Button
+                                variant={!isGridView ? "secondary" : "ghost"}
+                                size="sm"
+                                className="rounded-full h-8 px-4 text-[10px] font-black uppercase tracking-widest"
+                                onClick={() => setIsGridView(false)}
+                            >
+                                <Columns className="w-3.5 h-3.5 mr-2" />
+                                Carousel
+                            </Button>
+                            <Button
+                                variant={isGridView ? "secondary" : "ghost"}
+                                size="sm"
+                                className="rounded-full h-8 px-4 text-[10px] font-black uppercase tracking-widest"
+                                onClick={() => setIsGridView(true)}
+                            >
+                                <Grid className="w-3.5 h-3.5 mr-2" />
+                                Grid
+                            </Button>
+                        </div>
                         <Button variant="outline" className="rounded-full font-black uppercase text-[10px] tracking-widest hover-lift h-10 px-6" asChild>
                             <a href="/vivek_all_certificates.pdf" download>
                                 <Download className="mr-2 w-3.5 h-3.5" />
                                 Download Bundle
                             </a>
                         </Button>
-                        <Button className="rounded-full font-black uppercase text-[10px] tracking-widest hover-lift h-10 px-6" asChild>
-                            <a href="/vivek_all_certificates.pdf" target="_blank">
-                                <Maximize2 className="mr-2 w-3.5 h-3.5" />
-                                Fullscreen
-                            </a>
-                        </Button>
                     </div>
                 </div>
 
-                <div className="relative group">
-                    {/* Decorative Background */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-[2.5rem] blur opacity-25"></div>
+                {/* Main Content Area - Clean Layout */}
+                <div className="flex flex-col gap-6">
 
-                    <div className="relative bg-background border border-border/50 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                        {/* Control Bar */}
-                        <div className="bg-muted/50 border-b border-border/50 px-4 py-3 flex flex-wrap items-center justify-between gap-4">
-                            <div className="flex items-center gap-2">
-                                <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="rounded-full w-8 h-8"
-                                    onClick={() => changePage(-1)}
-                                    disabled={pageNumber <= 1}
-                                >
-                                    <ChevronLeft className="w-4 h-4" />
-                                </Button>
-                                <div className="text-[11px] font-black uppercase tracking-tighter bg-background px-3 py-1 rounded-full border border-border/50">
-                                    Page {pageNumber} <span className="text-muted-foreground">of {numPages || '--'}</span>
+                    {!isGridView ? (
+                        // CAROUSEL VIEW
+                        <>
+                            <div className="overflow-hidden rounded-xl bg-transparent" ref={emblaRef}>
+                                <div className="flex touch-pan-y">
+                                    {certificates.map((cert, index) => (
+                                        <div className="flex-[0_0_100%] min-w-0 relative h-[500px] sm:h-[700px] flex items-center justify-center p-0" key={cert.id}>
+                                            <div className="relative w-full h-full cursor-zoom-in" onClick={() => setLightboxImage(cert.src)}>
+                                                <Image
+                                                    src={cert.src}
+                                                    alt={cert.alt}
+                                                    fill
+                                                    className="object-contain"
+                                                    priority={index < 2}
+                                                    sizes="(max-width: 768px) 100vw, 1000px"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
+                            </div>
+
+                            {/* Carousel Controls */}
+                            <div className="flex items-center justify-center gap-4">
+                                <Button variant="outline" size="icon" className="rounded-full w-10 h-10 shadow-sm hover:bg-muted" onClick={scrollPrev}>
+                                    <ChevronLeft className="w-5 h-5" />
+                                </Button>
                                 <Button
-                                    variant="ghost"
+                                    variant="outline"
                                     size="icon"
-                                    className="rounded-full w-8 h-8"
-                                    onClick={() => changePage(1)}
-                                    disabled={pageNumber >= numPages}
+                                    className="rounded-full w-10 h-10 shadow-sm hover:bg-muted"
+                                    onClick={toggleAutoplay}
                                 >
-                                    <ChevronRight className="w-4 h-4" />
+                                    {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
                                 </Button>
-                            </div>
-
-                            <div className="flex items-center gap-2">
-                                <Button variant="ghost" size="icon" className="rounded-full w-8 h-8" onClick={zoomOut}>
-                                    <ZoomOut className="w-4 h-4" />
-                                </Button>
-                                <div className="text-[10px] font-bold w-12 text-center uppercase">
-                                    {Math.round(scale * 100)}%
+                                <div className="text-[12px] font-black uppercase tracking-widest text-muted-foreground w-32 text-center">
+                                    {selectedIndex + 1} / {certificates.length}
                                 </div>
-                                <Button variant="ghost" size="icon" className="rounded-full w-8 h-8" onClick={zoomIn}>
-                                    <ZoomIn className="w-4 h-4" />
+                                <Button variant="outline" size="icon" className="rounded-full w-10 h-10 shadow-sm hover:bg-muted" onClick={scrollNext}>
+                                    <ChevronRight className="w-5 h-5" />
                                 </Button>
                             </div>
-
-                            <div className="hidden sm:flex items-center gap-2 text-muted-foreground px-3 py-1 rounded-full bg-background/50 border border-border/50">
-                                <Search className="w-3.5 h-3.5" />
-                                <span className="text-[10px] font-black uppercase tracking-widest">Searchable Document</span>
-                            </div>
-                        </div>
-
-                        {/* PDF Rendering Area */}
-                        <div
-                            ref={containerRef}
-                            className="flex justify-center p-2 sm:p-8 bg-slate-100/50 dark:bg-slate-900/50 overflow-auto min-h-[500px] max-h-[800px] scrollbar-hide"
-                        >
-                            <Document
-                                file="/vivek_all_certificates.pdf"
-                                onLoadSuccess={onDocumentLoadSuccess}
-                                loading={
-                                    <div className="flex flex-col items-center justify-center p-20 space-y-4">
-                                        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
-                                        <p className="text-[10px] font-black uppercase tracking-widest animate-pulse">Initializing Secure Vault...</p>
+                        </>
+                    ) : (
+                        // GRID VIEW
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {certificates.map((cert, index) => (
+                                <div
+                                    key={cert.id}
+                                    className="aspect-[3/4] relative rounded-xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all cursor-pointer group/card bg-background"
+                                    onClick={() => {
+                                        setIsGridView(false)
+                                        // Slight delay to allow carousel to mount
+                                        setTimeout(() => emblaApi?.scrollTo(index), 10)
+                                    }}
+                                >
+                                    <Image
+                                        src={cert.src}
+                                        alt={cert.alt}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover/card:scale-110"
+                                        sizes="(max-width: 768px) 50vw, 33vw"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end opacity-0 group-hover/card:opacity-100 transition-opacity">
+                                        <span className="text-[10px] font-bold text-white">#{cert.id}</span>
                                     </div>
-                                }
-                                error={
-                                    <div className="p-10 text-center space-y-4">
-                                        <FileText className="w-12 h-12 text-destructive mx-auto opacity-50" />
-                                        <p className="text-sm font-bold text-destructive">Failed to load certificates.</p>
-                                        <Button variant="outline" size="sm" className="rounded-full" onClick={() => window.location.reload()}>
-                                            Try Again
-                                        </Button>
-                                    </div>
-                                }
-                            >
-                                <Page
-                                    pageNumber={pageNumber}
-                                    scale={scale}
-                                    width={containerWidth ? Math.min(containerWidth - 32, 800) : 300}
-                                    loading={null}
-                                    className="shadow-2xl rounded-sm overflow-hidden border border-border/50"
-                                    renderTextLayer={true}
-                                    renderAnnotationLayer={true}
-                                />
-                            </Document>
+                                </div>
+                            ))}
                         </div>
-
-
-                    </div>
+                    )}
                 </div>
             </div>
+
+            {/* LIGHTBOX */}
+            {lightboxImage && (
+                <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300">
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className="absolute top-4 right-4 text-white/50 hover:text-white rounded-full w-12 h-12"
+                        onClick={() => setLightboxImage(null)}
+                    >
+                        <X className="w-8 h-8" />
+                    </Button>
+                    <div className="relative w-full h-full max-w-5xl max-h-[90vh]">
+                        <Image
+                            src={lightboxImage}
+                            alt="Full View"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     )
 }

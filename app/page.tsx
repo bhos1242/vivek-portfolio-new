@@ -5,7 +5,7 @@ import { ExperienceSection } from "@/components/experience-section"
 import { ProjectsSection } from "@/components/projects-section"
 import { EducationSection } from "@/components/education-section"
 import { CertificationsSection } from "@/components/certifications-section"
-import { CertificateVaultWrapper } from "@/components/certificate-vault-wrapper"
+import { CertificateVaultSection } from "@/components/certificate-vault-section"
 import { AwardsGallerySection } from "@/components/awards-gallery-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
@@ -23,11 +23,11 @@ export default function Home() {
         <AboutSection />
         <SkillsSection />
         <CertificationsSection />
-        <CertificateVaultWrapper />
         <ExperienceSection />
         <ProjectsSection />
         <EducationSection />
         <AwardsGallerySection />
+        <CertificateVaultSection />
         <ContactSection />
         <WhatsAppButton />
       </main>

@@ -81,12 +81,12 @@ export function ContactSection() {
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com/vivekbhos",
+      href: "https://github.com/bhos1242",
       color: "hover:bg-gray-100 dark:hover:bg-gray-800"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      label: "LinkedIn", 
+      label: "LinkedIn",
       href: "https://linkedin.com/in/vivekbhos",
       color: "hover:bg-blue-50 dark:hover:bg-blue-900/20"
     },
@@ -253,10 +253,10 @@ export function ContactSection() {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full sm:w-auto group" 
-                    disabled={isSubmitting} 
+                  <Button
+                    type="submit"
+                    className="w-full sm:w-auto group"
+                    disabled={isSubmitting}
                     size="lg"
                   >
                     {isSubmitting ? (
@@ -294,140 +294,6 @@ export function ContactSection() {
               <p className="font-medium text-sm">Quick Response Guarantee</p>
               <p className="text-xs text-muted-foreground">I typically respond within 4-6 hours during business days</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-                      +91-9022738129
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg mt-1">
-                    <MapPin className="h-4 w-4 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-sm">Location</p>
-                    <p className="text-muted-foreground text-sm">Maharashtra, India</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg mt-1">
-                    <Clock className="h-4 w-4 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-sm">Response Time</p>
-                    <p className="text-muted-foreground text-sm">Within 24 hours</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-primary text-sm">Follow Me</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-3">
-                  <Button variant="outline" size="icon" asChild className="hover:bg-primary/10 bg-transparent">
-                    <a href="https://www.linkedin.com/in/vivekbhos/" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="icon" asChild className="hover:bg-primary/10 bg-transparent">
-                    <a href="https://github.com/bhos1242" target="_blank" rel="noopener noreferrer">
-                      <Github className="h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="lg:col-span-2">
-            <Card className="hover:shadow-lg transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-primary">Send a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        name="name"
-                        placeholder="Your full name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        name="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject *</Label>
-                    <Input
-                      id="subject"
-                      type="text"
-                      name="subject"
-                      placeholder="What's this about?"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell me about your project or how I can help..."
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20 resize-none"
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full sm:w-auto" disabled={isSubmitting} size="lg">
-                    {isSubmitting ? (
-                      <>
-                        <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

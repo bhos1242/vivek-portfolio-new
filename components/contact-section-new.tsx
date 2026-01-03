@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { useToast } from "@/hooks/use-toast"
-import { Mail, Phone, Linkedin, Github, Send, MapPin, Clock, MessageCircle, ArrowRight, CheckCircle } from "lucide-react"
+import { Mail, Phone, Linkedin, Github, Send, MapPin, Clock, MessageCircle, ArrowRight, CheckCircle, Instagram } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -81,14 +81,20 @@ export function ContactSection() {
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com/vivekbhos",
+      href: "https://github.com/bhos1242",
       color: "hover:bg-gray-100 dark:hover:bg-gray-800"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      label: "LinkedIn", 
+      label: "LinkedIn",
       href: "https://linkedin.com/in/vivekbhos",
       color: "hover:bg-blue-50 dark:hover:bg-blue-900/20"
+    },
+    {
+      icon: <Instagram className="h-5 w-5" />,
+      label: "Instagram",
+      href: "https://www.instagram.com/vivekbhos_06_07/",
+      color: "hover:bg-pink-50 dark:hover:bg-pink-900/20"
     },
     {
       icon: <MessageCircle className="h-5 w-5" />,
@@ -253,10 +259,10 @@ export function ContactSection() {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full sm:w-auto group" 
-                    disabled={isSubmitting} 
+                  <Button
+                    type="submit"
+                    className="w-full sm:w-auto group"
+                    disabled={isSubmitting}
                     size="lg"
                   >
                     {isSubmitting ? (

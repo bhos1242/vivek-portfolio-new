@@ -1,6 +1,6 @@
 "use client"
 
-import { Linkedin, Github, Mail, ArrowUp, Heart, Code, ExternalLink } from "lucide-react"
+import { Linkedin, Github, Mail, ArrowUp, Heart, Code, ExternalLink, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Footer() {
@@ -30,6 +30,12 @@ export function Footer() {
       href: "https://github.com/bhos1242",
       label: "GitHub",
       color: "hover:bg-gray-50 hover:text-gray-900 dark:hover:bg-gray-900/20"
+    },
+    {
+      icon: <Instagram className="h-5 w-5" />,
+      href: "https://www.instagram.com/vivekbhos_06_07/",
+      label: "Instagram",
+      color: "hover:bg-pink-50 hover:text-pink-600 dark:hover:bg-pink-900/20"
     },
     {
       icon: <Mail className="h-5 w-5" />,

@@ -151,7 +151,7 @@ export function ProjectsSection() {
             </p>
           </div>
           <Button variant="ghost" className="rounded-full group" asChild>
-            <a href="https://github.com/vivekbhos" target="_blank">
+            <a href="https://github.com/bhos1242" target="_blank">
               More on GitHub <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>
@@ -202,7 +202,7 @@ export function ProjectsSection() {
                     </a>
                   </Button>
                   <Button size={project.featured ? "lg" : "sm"} variant="outline" className="rounded-full flex-none hover-lift" asChild>
-                    <a href="https://github.com/vivekbhos" target="_blank">
+                    <a href="https://github.com/bhos1242" target="_blank">
                       <Github className="w-4 h-4" />
                     </a>
                   </Button>

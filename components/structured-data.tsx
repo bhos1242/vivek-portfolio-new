@@ -1,6 +1,6 @@
 export function StructuredData() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vivekbhos.dev'
-  
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vivek-bhos.vercel.app/'
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -60,7 +60,8 @@ export function StructuredData() {
     "sameAs": [
       "https://github.com/bhos1242",
       "https://linkedin.com/in/vivekbhos",
-      "https://twitter.com/bhos1242"
+      "https://twitter.com/bhos1242",
+      "https://www.instagram.com/vivekbhos_06_07/"
     ],
     "contactPoint": {
       "@type": "ContactPoint",

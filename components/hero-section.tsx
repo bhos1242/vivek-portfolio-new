@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Github, Linkedin, ExternalLink, ChevronDown, Sparkles, ShieldCheck } from "lucide-react"
+import { Mail, Github, Linkedin, ExternalLink, ChevronDown, Sparkles, ShieldCheck, Instagram } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
@@ -27,17 +27,14 @@ export function HeroSection() {
 
           <div className="lg:col-span-7 text-center lg:text-left space-y-8 animate-in">
             <div className="space-y-4">
-              <Badge variant="secondary" className="px-4 py-2 rounded-full bg-primary/10 text-primary border-primary/20 shadow-sm animate-pulse">
-                <Sparkles className="w-3.5 h-3.5 mr-2" />
-                Available for new projects
-              </Badge>
+
 
               <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black leading-[1.1] tracking-tight">
-                Crafting <span className="text-gradient">Digital</span> Experiences
+                Solving <span className="text-gradient">Real-Life</span> Problems
               </h1>
 
               <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Hi, I'm <span className="font-bold text-foreground">Vivek Bhos</span>. A Full-Stack Developer specializing in building high-performance, compact, and beautiful web applications.
+                Hi, I'm <span className="font-bold text-foreground">Vivek Bhos</span>. An entrepreneurial developer dedicated to building scalable solutions that address real-world challenges with innovation and precision.
               </p>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
@@ -67,8 +64,9 @@ export function HeroSection() {
               </Button>
               <div className="flex gap-3 justify-center">
                 {[
-                  { icon: Github, href: "https://github.com/vivekbhos" },
+                  { icon: Github, href: "https://github.com/bhos1242" },
                   { icon: Linkedin, href: "https://linkedin.com/in/vivekbhos" },
+                  { icon: Instagram, href: "https://www.instagram.com/vivekbhos_06_07/" },
                   { icon: ExternalLink, href: "https://navibyte.in" }
                 ].map((social, i) => (
                   <Button
