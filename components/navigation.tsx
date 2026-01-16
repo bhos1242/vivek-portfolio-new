@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu, Code, Mail, Home, User, Briefcase, FolderOpen, GraduationCap, ChevronUp, Trophy, Sparkles } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
   { name: "Home", href: "#hero", icon: Home },
@@ -132,7 +131,7 @@ export function Navigation() {
                 <Icon className="h-5 w-5" />
                 <span className="text-[10px] font-bold uppercase tracking-wider">{item.name}</span>
                 {isActive && (
-                  <motion.div layoutId="activeDot" className="w-1 h-1 bg-primary rounded-full" />
+                   <div className="w-1 h-1 bg-primary rounded-full" />
                 )}
               </button>
             )
