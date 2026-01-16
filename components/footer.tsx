@@ -49,15 +49,15 @@ export function Footer() {
     <footer className="bg-gradient-to-t from-secondary/20 to-background border-t border-border/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="py-10 lg:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Brand Section */}
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <Code className="h-5 w-5 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">Vivek Bhos</h3>
+                <h3 className="text-xl font-black text-foreground">Vivek Bhos</h3>
               </div>
               <p className="text-muted-foreground max-w-md leading-relaxed">
                 Full-Stack Developer & Co-Founder passionate about building innovative
@@ -110,9 +110,9 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="py-6 border-t border-border/50">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
             <div className="text-center sm:text-left">
-              <p className="text-muted-foreground text-sm">
+              <p className="text-muted-foreground text-[10px] sm:text-sm font-medium uppercase tracking-wider">
                 © {currentYear} Vivek Bhos. All rights reserved.
               </p>
             </div>

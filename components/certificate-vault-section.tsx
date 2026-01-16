@@ -124,9 +124,9 @@ export function CertificateVaultSection() {
                             <div className="overflow-hidden rounded-xl bg-transparent" ref={emblaRef}>
                                 <div className="flex touch-pan-y">
                                     {certificates.map((cert, index) => (
-                                        <div className="flex-[0_0_100%] min-w-0 relative h-[400px] sm:h-[600px] flex items-center justify-center p-2 sm:p-4" key={cert.id}>
+                                        <div className="flex-[0_0_100%] min-w-0 relative h-[380px] sm:h-[600px] flex items-center justify-center p-1 sm:p-4" key={cert.id}>
                                             <div
-                                                className="relative w-full h-full cursor-zoom-in glass-morphism rounded-2xl overflow-hidden p-2 sm:p-4 group/cert"
+                                                className="relative w-full h-full cursor-zoom-in glass-morphism rounded-2xl overflow-hidden p-1.5 sm:p-4 group/cert"
                                                 onClick={() => setLightboxImage(cert.src)}
                                             >
                                                 <Image

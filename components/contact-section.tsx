@@ -102,14 +102,14 @@ export function ContactSection() {
     <section id="contact" className="app-section bg-gradient-to-br from-primary/5 via-background to-secondary/10">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
         <div className="text-center mb-10 lg:mb-12">
-          <Badge variant="outline" className="mb-2 text-sm font-medium">
+          <Badge variant="outline" className="mb-2 text-xs sm:text-sm font-medium">
             Get In Touch
           </Badge>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-4 text-balance break-words">
             Let's Build Something Amazing
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-4"></div>
-          <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
             Ready to discuss your next project? I'm always excited to collaborate on innovative solutions.
           </p>
         </div>

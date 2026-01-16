@@ -22,6 +22,18 @@
   --color-ring: var(--ring);
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  
+  /* Fluid Typography */
+  --font-size-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.75rem);
+  --font-size-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
+  --font-size-base: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+  --font-size-lg: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-xl: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem);
+  --font-size-2xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --font-size-3xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+  --font-size-4xl: clamp(1.8rem, 1.6rem + 1vw, 2.25rem);
+  --font-size-5xl: clamp(2.25rem, 2rem + 1.25vw, 3rem);
+  --font-size-6xl: clamp(3rem, 2.5rem + 2.5vw, 4.5rem);
 }
 
 :root {

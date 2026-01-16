@@ -72,19 +72,19 @@ export function AboutSection() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-8 lg:mt-0">
             {highlights.map((highlight, index) => (
               <Card
                 key={index}
                 className="compact-card group border-none shadow-none bg-muted/40 hover:bg-muted/60"
               >
                 <CardContent className="p-4 sm:p-5 flex flex-col items-center text-center space-y-3">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                     {highlight.icon}
                   </div>
                   <div>
-                    <h3 className="font-bold text-base">{highlight.title}</h3>
-                    <p className="text-xs text-muted-foreground">{highlight.description}</p>
+                    <h3 className="font-bold text-sm sm:text-base">{highlight.title}</h3>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground">{highlight.description}</p>
                   </div>
                 </CardContent>
               </Card>

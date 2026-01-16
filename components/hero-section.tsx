@@ -29,7 +29,7 @@ export function HeroSection() {
             <div className="space-y-4">
 
 
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
                 Solving <span className="text-gradient">Real-Life</span> Problems
               </h1>
 
@@ -55,7 +55,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 asChild
-                className="rounded-full px-8 h-12 text-base shadow-xl hover-lift bg-primary hover:bg-primary/90"
+                className="rounded-full px-8 h-12 sm:h-14 text-sm sm:text-base shadow-xl hover-lift bg-primary hover:bg-primary/90"
               >
                 <a href="#contact">
                   <Mail className="mr-2 h-5 w-5" />
@@ -74,7 +74,7 @@ export function HeroSection() {
                     variant="outline"
                     size="icon"
                     asChild
-                    className="w-10 h-10 rounded-full border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all hover-lift"
+                    className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all hover-lift"
                     aria-label={`Connect on ${social.icon.name}`}
                   >
                     <a href={social.href} target="_blank" rel="noopener noreferrer">

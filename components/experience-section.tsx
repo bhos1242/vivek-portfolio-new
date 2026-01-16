@@ -8,14 +8,10 @@ import Image from "next/image"
 const experiences = [
   {
     company: "Modern College of Arts, Science & Commerce",
-    position: "Industry Expert — Board of Studies",
-    duration: "2025 – Present",
-    location: "Pune, India",
-    type: "Current",
     website: "https://www.moderncollegepune.edu.in",
     achievements: [
-      "Appointed as Industry Expert on the Board of Studies to advise curriculum alignment with industry needs.",
-      "Collaborating with faculty to review course content, projects, and assessment methods for software engineering programs.",
+      "Appointed as Industry Expert on the Board of Studies (BOS) for curriculum alignment.",
+      "Collaborating with faculty to review course content and software engineering programs.",
     ],
   },
   {
@@ -78,11 +74,11 @@ export function ExperienceSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
           {experiences.map((exp, index) => (
-            <Card key={index} className="compact-card group flex flex-col justify-between border-none bg-muted/30">
-              <div className="space-y-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 overflow-hidden relative">
+            <Card key={index} className="compact-card group flex flex-col justify-between border-none bg-muted/30 p-4 sm:p-5">
+              <div className="space-y-3">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex gap-2.5">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 overflow-hidden relative shrink-0">
                       {exp.logo ? (
                         <Image
                           src={exp.logo}
@@ -94,17 +90,19 @@ export function ExperienceSection() {
                         <Building className="w-5 h-5" />
                       )}
                     </div>
-                    <div>
-                      <h3 className="font-black text-lg leading-tight group-hover:text-primary transition-colors">
+                    <div className="min-w-0">
+                      <h3 className="font-black text-base sm:text-lg leading-tight group-hover:text-primary transition-colors truncate">
                         {exp.position}
                       </h3>
-                      <p className="text-sm font-bold text-muted-foreground">{exp.company}</p>
+                      <p className="text-xs sm:text-sm font-bold text-muted-foreground truncate">{exp.company}</p>
                     </div>
                   </div>
                   {exp.type === "Current" && (
-                    <Badge className="bg-primary/20 text-primary border-none text-[10px] font-black uppercase px-2 py-0.5 animate-pulse">
-                      Active
-                    </Badge>
+                    <div className="shrink-0">
+                      <Badge className="bg-primary/20 text-primary border-none text-[8px] sm:text-[10px] font-black uppercase px-1.5 py-0.5 animate-pulse">
+                        Active
+                      </Badge>
+                    </div>
                   )}
                 </div>
 

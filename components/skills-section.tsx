@@ -93,9 +93,9 @@ export function SkillsSection() {
         </div>
 
         <Tabs defaultValue="technical" className="w-full">
-          <TabsList className="flex w-full max-w-xs mb-5 p-1 bg-muted/50 rounded-full h-10">
-            <TabsTrigger value="technical" className="flex-1 rounded-full text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Technical</TabsTrigger>
-            <TabsTrigger value="soft" className="flex-1 rounded-full text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Soft Skills</TabsTrigger>
+          <TabsList className="flex w-full max-w-[280px] sm:max-w-xs mb-6 p-1 bg-muted/50 rounded-full h-10">
+            <TabsTrigger value="technical" className="flex-1 rounded-full text-[10px] sm:text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Technical</TabsTrigger>
+            <TabsTrigger value="soft" className="flex-1 rounded-full text-[10px] sm:text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Soft Skills</TabsTrigger>
           </TabsList>
 
           <TabsContent value="technical">
@@ -103,20 +103,20 @@ export function SkillsSection() {
               {skillCategories.slice(0, 5).map((category, index) => (
                 <Card
                   key={index}
-                  className="compact-card shine-effect group border-none bg-muted/30 hover:bg-muted/50 transition-colors"
+                  className="compact-card shine-effect group border-none bg-muted/30 hover:bg-muted/50 transition-colors p-3 sm:p-4"
                 >
-                  <CardContent className="p-3.5 space-y-3">
+                  <CardContent className="p-0 space-y-3">
                     <div className="flex items-center gap-2">
-                      <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
+                      <div className="p-1.5 bg-primary/10 rounded-lg text-primary shrink-0">
                         {category.icon}
                       </div>
-                      <h3 className="font-bold text-sm tracking-tight">{category.title}</h3>
+                      <h3 className="font-bold text-xs sm:text-sm tracking-tight truncate">{category.title}</h3>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1">
                       {category.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="text-[10px] font-bold px-2.5 py-1 bg-primary/10 text-primary border border-primary/10 rounded-full uppercase tracking-tighter"
+                          className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 bg-primary/10 text-primary border border-primary/10 rounded-full uppercase tracking-tighter"
                         >
                           {skill}
                         </span>

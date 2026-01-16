@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu, Code, Mail, Home, User, Briefcase, FolderOpen, GraduationCap, ChevronUp, Trophy, Sparkles } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const navItems = [
   { name: "Home", href: "#hero", icon: Home },
@@ -125,13 +126,13 @@ export function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`flex flex-col items-center gap-1 transition-all ${isActive ? "text-primary scale-110" : "text-muted-foreground opacity-70"
+                className={`flex flex-col items-center justify-center gap-1 transition-all h-12 w-12 rounded-xl ${isActive ? "text-primary scale-110 bg-primary/5" : "text-muted-foreground opacity-70"
                   }`}
               >
                 <Icon className="h-5 w-5" />
-                <span className="text-[9px] font-bold uppercase tracking-wider">{item.name}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider">{item.name}</span>
                 {isActive && (
-                  <div className="w-1 h-1 bg-primary rounded-full" />
+                  <motion.div layoutId="activeDot" className="w-1 h-1 bg-primary rounded-full" />
                 )}
               </button>
             )
@@ -139,7 +140,7 @@ export function Navigation() {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <button 
-                className="flex flex-col items-center gap-1 text-muted-foreground opacity-70"
+                className="flex flex-col items-center justify-center gap-1 h-12 w-12 text-muted-foreground opacity-70"
                 aria-label="Open navigation menu"
               >
                 <Menu className="h-5 w-5" />

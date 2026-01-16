@@ -196,11 +196,11 @@ export function ProjectsSection() {
               </div>
 
                   <div className="flex flex-col flex-1 p-4 sm:p-5 justify-between">
-                    <div className="space-y-3">
+                    <div className="space-y-2.5">
                       <CardHeader className="p-0">
                         <CardTitle className={cn(
                           "font-black tracking-tight group-hover:text-primary transition-colors line-clamp-1",
-                          project.featured ? "text-2xl sm:text-3xl" : "text-lg"
+                          project.featured ? "text-xl sm:text-3xl" : "text-base sm:text-lg"
                         )}>
                           {project.title}
                         </CardTitle>
@@ -208,8 +208,8 @@ export function ProjectsSection() {
 
                       <CardContent className="p-0 space-y-3">
                         <p className={cn(
-                          "text-muted-foreground leading-relaxed line-clamp-3",
-                          project.featured ? "text-sm sm:text-base" : "text-xs sm:text-sm"
+                          "text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-3",
+                          project.featured ? "text-xs sm:text-base" : "text-xs sm:text-sm"
                         )}>
                           {project.description}
                         </p>
