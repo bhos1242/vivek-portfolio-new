@@ -3,13 +3,15 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-import { Menu, Code, Mail, Home, User, Briefcase, FolderOpen, GraduationCap, ChevronUp } from "lucide-react"
+import { Menu, Code, Mail, Home, User, Briefcase, FolderOpen, GraduationCap, ChevronUp, Trophy, Sparkles } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "#hero", icon: Home },
   { name: "About", href: "#about", icon: User },
   { name: "Skills", href: "#skills", icon: Code },
   { name: "Projects", href: "#projects", icon: FolderOpen },
+  { name: "Experience", href: "#experience", icon: Briefcase },
+  { name: "Achievements", href: "#awards", icon: Trophy },
   { name: "Contact", href: "#contact", icon: Mail },
 ]
 
@@ -25,18 +27,17 @@ export function Navigation() {
       setIsScrolled(scrolled)
       setShowScrollTop(window.scrollY > 500)
 
-      const sections = navItems.map((item) => ({
-        id: item.href.substring(1),
-        href: item.href
-      }))
-
+      const sections = [
+        "hero", "about", "projects", "skills", "experience", "awards", "certifications", "education", "vault", "contact"
+      ]
+ 
       let current = "hero"
-      for (const section of sections) {
-        const element = document.getElementById(section.id)
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
         if (element) {
           const rect = element.getBoundingClientRect()
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            current = section.id
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            current = sectionId
             break
           }
         }
@@ -67,7 +68,7 @@ export function Navigation() {
       {/* Desktop Navigation - Pill Style */}
       <nav
         className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 hidden md:block ${isScrolled
-            ? "w-[90%] max-w-2xl py-2 px-4 glass-morphism rounded-full shadow-2xl"
+            ? "w-[95%] max-w-4xl py-2 px-4 glass-morphism rounded-full shadow-2xl"
             : "w-full max-w-6xl py-4 px-8 bg-transparent"
           }`}
       >
@@ -83,15 +84,15 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center gap-1 bg-muted/20 p-1 rounded-full">
-            {navItems.slice(0, 4).map((item) => {
+            {navItems.slice(0, 6).map((item) => {
               const isActive = activeSection === item.href.substring(1)
               return (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${isActive
+                  className={`px-4 py-1.5 rounded-full text-[13px] font-bold transition-all ${isActive
                       ? "bg-primary text-primary-foreground shadow-md"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                     }`}
                 >
                   {item.name}
@@ -113,7 +114,7 @@ export function Navigation() {
       {/* Mobile Navigation - Bottom Bar */}
       <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] glass-morphism z-50 md:hidden rounded-2xl shadow-2xl border border-white/20 px-6 py-3">
         <div className="flex justify-between items-center">
-          {navItems.map((item) => {
+          {navItems.filter(item => ["Home", "Projects", "Experience", "Achievements"].includes(item.name)).map((item) => {
             const isActive = activeSection === item.href.substring(1)
             const Icon = item.icon
             return (
@@ -124,7 +125,7 @@ export function Navigation() {
                   }`}
               >
                 <Icon className="h-5 w-5" />
-                <span className="text-[10px] font-medium uppercase tracking-wider">{item.name}</span>
+                <span className="text-[9px] font-bold uppercase tracking-wider">{item.name}</span>
                 {isActive && (
                   <div className="w-1 h-1 bg-primary rounded-full" />
                 )}
@@ -138,17 +139,25 @@ export function Navigation() {
                 <span className="text-[10px] font-medium uppercase tracking-wider">More</span>
               </button>
             </SheetTrigger>
-            <SheetContent side="bottom" className="rounded-t-3xl h-[40vh]">
-              <SheetTitle className="text-left mb-6 font-bold text-xl">Overview</SheetTitle>
+            <SheetContent side="bottom" className="rounded-t-3xl h-[45vh] p-6">
+              <SheetTitle className="text-left mb-6 font-black text-2xl tracking-tighter">Navigation</SheetTitle>
               <div className="grid grid-cols-2 gap-4">
-                <Button variant="outline" className="h-20 rounded-2xl flex flex-col gap-2" onClick={() => scrollToSection("#education")}>
-                  <GraduationCap className="h-5 w-5" />
-                  Education
-                </Button>
-                <Button variant="outline" className="h-20 rounded-2xl flex flex-col gap-2" onClick={() => scrollToSection("#experience")}>
-                  <Briefcase className="h-5 w-5" />
-                  Work
-                </Button>
+                {[
+                  { name: "About", href: "#about", icon: User },
+                  { name: "Skills", href: "#skills", icon: Code },
+                  { name: "Education", href: "#education", icon: GraduationCap },
+                  { name: "Contact", href: "#contact", icon: Mail },
+                ].map((item) => (
+                  <Button
+                    key={item.name}
+                    variant="outline"
+                    className="h-24 rounded-2xl flex flex-col gap-2 border-border/50 bg-muted/20 hover:bg-primary/5 hover:border-primary/30 transition-all font-bold"
+                    onClick={() => scrollToSection(item.href)}
+                  >
+                    <item.icon className="h-6 w-6 text-primary" />
+                    <span className="text-xs uppercase tracking-widest">{item.name}</span>
+                  </Button>
+                ))}
               </div>
             </SheetContent>
           </Sheet>

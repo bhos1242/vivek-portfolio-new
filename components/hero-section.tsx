@@ -45,7 +45,7 @@ export function HeroSection() {
                   </Badge>
                   <Badge variant="outline" className="rounded-full border-accent/20 bg-accent/5 text-accent py-1 px-3">
                     <ShieldCheck className="w-3 h-3 mr-1.5" />
-                    50+ Certificates
+                    50+ Achievements
                   </Badge>
                 </div>
               </div>

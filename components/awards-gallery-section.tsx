@@ -9,47 +9,47 @@ const awards = [
   {
     id: 1,
     image: "/gallary/image.png",
-    alt: "Award Certificate 1"
+    alt: "Achievement Photo 1"
   },
   {
     id: 2,
     image: "/gallary/image copy.png",
-    alt: "Award Certificate 2"
+    alt: "Achievement Photo 2"
   },
   {
     id: 3,
     image: "/gallary/image copy 2.png",
-    alt: "Award Certificate 3"
+    alt: "Achievement Photo 3"
   },
   {
     id: 4,
     image: "/gallary/image copy 3.png",
-    alt: "Award Certificate 4"
+    alt: "Achievement Photo 4"
   },
   {
     id: 5,
     image: "/gallary/image copy 4.png",
-    alt: "Award Certificate 5"
+    alt: "Achievement Photo 5"
   },
   {
     id: 6,
     image: "/gallary/image copy 5.png",
-    alt: "Award Certificate 6"
+    alt: "Achievement Photo 6"
   },
   {
     id: 7,
     image: "/gallary/image copy 6.png",
-    alt: "Award Certificate 7"
+    alt: "Achievement Photo 7"
   },
   {
     id: 8,
     image: "/gallary/image copy 7.png",
-    alt: "Award Certificate 8"
+    alt: "Achievement Photo 8"
   },
   {
     id: 9,
     image: "/gallary/image copy 8.png",
-    alt: "Award Certificate 9"
+    alt: "Achievement Photo 9"
   }
   ,
   {
@@ -61,9 +61,9 @@ const awards = [
 
 // Added recent uploads
 awards.push(
-  { id: 11, image: "/gallary/image.1.png", alt: "Award Certificate 11" },
-  { id: 12, image: "/gallary/image.2.png", alt: "Award Certificate 12" },
-  { id: 13, image: "/gallary/image.3.png", alt: "Award Certificate 13" }
+  { id: 11, image: "/gallary/image.1.png", alt: "Achievement Photo 11" },
+  { id: 12, image: "/gallary/image.2.png", alt: "Achievement Photo 12" },
+  { id: 13, image: "/gallary/image.3.png", alt: "Achievement Photo 13" }
 )
 
 export function AwardsGallerySection() {
@@ -86,16 +86,16 @@ export function AwardsGallerySection() {
           {awards.map((award) => (
             <Dialog key={award.id}>
               <DialogTrigger asChild>
-                <div className="compact-card group cursor-pointer border-none bg-background p-0 h-48 sm:h-64">
-                  <div className="relative w-full h-full">
+                <div className="compact-card shine-effect group cursor-pointer border border-border/10 bg-background/50 p-1.5 h-48 sm:h-64 hover:border-primary/50 transition-all duration-500">
+                  <div className="relative w-full h-full rounded-lg overflow-hidden">
                     <Image
                       src={award.image}
                       alt={award.alt}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover group-hover:scale-110 transition-transform duration-1000"
                       sizes="(max-width: 768px) 50vw, 25vw"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-primary/10 transition-colors duration-300" />
+             
                   </div>
                 </div>
               </DialogTrigger>

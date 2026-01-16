@@ -24,6 +24,7 @@ const experiences = [
     duration: "Jan 2025 – Present",
     location: "Pune, India",
     type: "Current",
+    logo: "/logo/navibyte.png",
     website: "https://www.navibyte.in",
     achievements: [
       "Leading technical strategy and product development for innovative web solutions.",
@@ -37,6 +38,7 @@ const experiences = [
     duration: "2024 – Present",
     location: "Pune, India",
     type: "Current",
+    logo: "/logo/abhyasika.png",
     website: "https://www.abhyasika.online",
     achievements: [
       "Built a cloud-based study-space platform with real-time booking and automated payments.",
@@ -80,8 +82,17 @@ export function ExperienceSection() {
               <div className="space-y-4">
                 <div className="flex items-start justify-between">
                   <div className="flex gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-                      <Building className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 overflow-hidden relative">
+                      {exp.logo ? (
+                        <Image
+                          src={exp.logo}
+                          alt={exp.company}
+                          fill
+                          className="object-cover p-1.5"
+                        />
+                      ) : (
+                        <Building className="w-5 h-5" />
+                      )}
                     </div>
                     <div>
                       <h3 className="font-black text-lg leading-tight group-hover:text-primary transition-colors">

@@ -78,10 +78,10 @@ export function CertificateVaultSection() {
                             Verified Credentials
                         </Badge>
                         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-                            Certificate <span className="text-gradient">Vault</span>
+                            Achievement <span className="text-gradient">Vault</span>
                         </h2>
                         <p className="text-lg text-muted-foreground font-medium">
-                            Comprehensive archive of 57 verified certificates from top institutions.
+                            Comprehensive archive of 57 verified achievements and credentials.
                         </p>
                     </div>
 
@@ -124,16 +124,22 @@ export function CertificateVaultSection() {
                             <div className="overflow-hidden rounded-xl bg-transparent" ref={emblaRef}>
                                 <div className="flex touch-pan-y">
                                     {certificates.map((cert, index) => (
-                                        <div className="flex-[0_0_100%] min-w-0 relative h-[500px] sm:h-[700px] flex items-center justify-center p-0" key={cert.id}>
-                                            <div className="relative w-full h-full cursor-zoom-in" onClick={() => setLightboxImage(cert.src)}>
+                                        <div className="flex-[0_0_100%] min-w-0 relative h-[500px] sm:h-[700px] flex items-center justify-center p-4 sm:p-8" key={cert.id}>
+                                            <div
+                                                className="relative w-full h-full cursor-zoom-in glass-morphism rounded-2xl overflow-hidden p-2 sm:p-4 group/cert"
+                                                onClick={() => setLightboxImage(cert.src)}
+                                            >
                                                 <Image
                                                     src={cert.src}
                                                     alt={cert.alt}
                                                     fill
-                                                    className="object-contain"
+                                                    className="object-contain transition-transform duration-700 group-hover/cert:scale-[1.02]"
                                                     priority={index < 2}
                                                     sizes="(max-width: 768px) 100vw, 1000px"
                                                 />
+                                                <div className="absolute top-4 right-4 bg-background/50 backdrop-blur-md p-2 rounded-full border border-border/50 opacity-0 group-hover/cert:opacity-100 transition-opacity">
+                                                    <Maximize2 className="w-4 h-4 text-foreground" />
+                                                </div>
                                             </div>
                                         </div>
                                     ))}
@@ -167,22 +173,25 @@ export function CertificateVaultSection() {
                             {certificates.map((cert, index) => (
                                 <div
                                     key={cert.id}
-                                    className="aspect-[3/4] relative rounded-xl overflow-hidden border border-border/50 shadow-sm hover:shadow-xl transition-all cursor-pointer group/card bg-background"
+                                    className="aspect-[3/4] relative rounded-xl overflow-hidden border border-border/10 shadow-sm hover:shadow-xl transition-all cursor-pointer group/card bg-background/50 p-1 shine-effect"
                                     onClick={() => {
                                         setIsGridView(false)
                                         // Slight delay to allow carousel to mount
                                         setTimeout(() => emblaApi?.scrollTo(index), 10)
                                     }}
                                 >
-                                    <Image
-                                        src={cert.src}
-                                        alt={cert.alt}
-                                        fill
-                                        className="object-cover transition-transform duration-500 group-hover/card:scale-110"
-                                        sizes="(max-width: 768px) 50vw, 33vw"
-                                    />
-                                    <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end opacity-0 group-hover/card:opacity-100 transition-opacity">
-                                        <span className="text-[10px] font-bold text-white">#{cert.id}</span>
+                                    <div className="relative w-full h-full rounded-lg overflow-hidden">
+                                        <Image
+                                            src={cert.src}
+                                            alt={cert.alt}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover/card:scale-110"
+                                            sizes="(max-width: 768px) 50vw, 33vw"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex justify-between items-end p-3 opacity-0 group-hover/card:opacity-100 transition-opacity">
+                                            <span className="text-[10px] font-bold text-white uppercase tracking-tighter">Page {cert.id}</span>
+                                            <ZoomIn className="w-4 h-4 text-white" />
+                                        </div>
                                     </div>
                                 </div>
                             ))}

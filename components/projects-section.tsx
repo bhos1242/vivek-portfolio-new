@@ -161,7 +161,7 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`compact-card group relative flex flex-col justify-between ${project.featured ? "md:col-span-2 md:row-span-2" : "md:col-span-1 md:row-span-1"
+              className={`compact-card shine-effect group relative flex flex-col justify-between ${project.featured ? "md:col-span-2 md:row-span-2 bg-gradient-to-br from-card/50 to-primary/5 border-primary/20" : "md:col-span-1 md:row-span-1"
                 }`}
             >
               <div className="absolute top-4 right-4 z-10 flex gap-2">
@@ -176,7 +176,7 @@ export function ProjectsSection() {
               </div>
 
               <CardHeader className="p-0 mb-4">
-                <CardTitle className={`${project.featured ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"} font-black`}>
+                <CardTitle className={`${project.featured ? "text-2xl sm:text-4xl" : "text-lg sm:text-xl"} font-black tracking-tight group-hover:text-primary transition-colors`}>
                   {project.title}
                 </CardTitle>
               </CardHeader>
@@ -188,7 +188,7 @@ export function ProjectsSection() {
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="text-[10px] font-bold px-2 py-1 bg-muted rounded-md uppercase tracking-tighter">
+                    <span key={i} className="text-[10px] font-bold px-2.5 py-1 bg-primary/10 text-primary border border-primary/10 rounded-full uppercase tracking-tighter">
                       {tag}
                     </span>
                   ))}

@@ -103,7 +103,7 @@ export function SkillsSection() {
               {skillCategories.slice(0, 5).map((category, index) => (
                 <Card
                   key={index}
-                  className="compact-card group border-none bg-muted/30"
+                  className="compact-card shine-effect group border-none bg-muted/30 hover:bg-muted/50 transition-colors"
                 >
                   <CardContent className="p-4 space-y-4">
                     <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export function SkillsSection() {
                       {category.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="text-[10px] font-bold px-2 py-0.5 bg-background/50 border border-border/50 rounded-md uppercase tracking-tighter"
+                          className="text-[10px] font-bold px-2.5 py-1 bg-primary/10 text-primary border border-primary/10 rounded-full uppercase tracking-tighter"
                         >
                           {skill}
                         </span>
