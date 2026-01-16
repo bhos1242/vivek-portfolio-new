@@ -65,12 +65,12 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="app-section bg-muted/20">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div className="space-y-4 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+          <div className="space-y-2 max-w-2xl">
             <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
               Work History
             </Badge>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
               Professional <span className="text-gradient">Journey</span>
             </h2>
           </div>
@@ -119,7 +119,7 @@ export function ExperienceSection() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1">
                   {exp.achievements.map((achievement, i) => (
                     <div key={i} className="flex gap-2">
                       <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />

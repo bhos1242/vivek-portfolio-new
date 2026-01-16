@@ -71,16 +71,16 @@ export function CertificateVaultSection() {
         <section id="vault" className="app-section bg-muted/30">
             <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-                    <div className="space-y-4 max-w-2xl">
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+                    <div className="space-y-2 max-w-2xl">
                         <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
                             <ShieldCheck className="mr-2 h-3.5 w-3.5" />
                             Verified Credentials
                         </Badge>
-                        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
                             Achievement <span className="text-gradient">Vault</span>
                         </h2>
-                        <p className="text-lg text-muted-foreground font-medium">
+                        <p className="text-base sm:text-lg text-muted-foreground font-medium">
                             Comprehensive archive of 57 verified achievements and credentials.
                         </p>
                     </div>
@@ -124,7 +124,7 @@ export function CertificateVaultSection() {
                             <div className="overflow-hidden rounded-xl bg-transparent" ref={emblaRef}>
                                 <div className="flex touch-pan-y">
                                     {certificates.map((cert, index) => (
-                                        <div className="flex-[0_0_100%] min-w-0 relative h-[500px] sm:h-[700px] flex items-center justify-center p-4 sm:p-8" key={cert.id}>
+                                        <div className="flex-[0_0_100%] min-w-0 relative h-[400px] sm:h-[600px] flex items-center justify-center p-2 sm:p-4" key={cert.id}>
                                             <div
                                                 className="relative w-full h-full cursor-zoom-in glass-morphism rounded-2xl overflow-hidden p-2 sm:p-4 group/cert"
                                                 onClick={() => setLightboxImage(cert.src)}

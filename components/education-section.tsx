@@ -29,12 +29,12 @@ export function EducationSection() {
   return (
     <section id="education" className="app-section bg-background">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div className="space-y-4 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+          <div className="space-y-2 max-w-2xl">
             <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
               Degrees & Certs
             </Badge>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
               Academic <span className="text-gradient">Base</span>
             </h2>
           </div>

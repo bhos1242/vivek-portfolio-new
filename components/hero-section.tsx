@@ -13,7 +13,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="min-h-[85vh] flex flex-col items-center justify-center pt-16 pb-10 sm:pt-24 sm:pb-12 relative overflow-hidden bg-background"
+      className="min-h-[75vh] flex flex-col items-center justify-center pt-12 pb-8 sm:pt-16 sm:pb-10 relative overflow-hidden bg-background"
     >
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -29,11 +29,11 @@ export function HeroSection() {
             <div className="space-y-4">
 
 
-              <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black leading-[1.1] tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
                 Solving <span className="text-gradient">Real-Life</span> Problems
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Hi, I'm <span className="font-bold text-foreground">Vivek Bhos</span>. An entrepreneurial developer dedicated to building scalable solutions that address real-world challenges with innovation and precision.
               </p>
 
@@ -55,7 +55,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 asChild
-                className="rounded-full px-8 py-6 text-lg shadow-xl hover-lift bg-primary hover:bg-primary/90"
+                className="rounded-full px-8 h-12 text-base shadow-xl hover-lift bg-primary hover:bg-primary/90"
               >
                 <a href="#contact">
                   <Mail className="mr-2 h-5 w-5" />
@@ -74,7 +74,7 @@ export function HeroSection() {
                     variant="outline"
                     size="icon"
                     asChild
-                    className="w-14 h-14 rounded-full border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all hover-lift"
+                    className="w-10 h-10 rounded-full border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all hover-lift"
                     aria-label={`Connect on ${social.icon.name}`}
                   >
                     <a href={social.href} target="_blank" rel="noopener noreferrer">
@@ -89,7 +89,7 @@ export function HeroSection() {
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative group">
               {/* Image Container with Custom Shape */}
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-[2rem] overflow-hidden rotate-3 group-hover:rotate-0 transition-all duration-500 shadow-2xl border-8 border-white dark:border-slate-900">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[320px] lg:h-[320px] rounded-[2rem] overflow-hidden rotate-3 group-hover:rotate-0 transition-all duration-500 shadow-2xl border-8 border-white dark:border-slate-900">
                 <Image
                   src="/hero.png"
                   alt="Vivek Bhos"

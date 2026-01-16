@@ -30,19 +30,19 @@ export function AboutSection() {
   return (
     <section id="about" className="app-section">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-          <div className="space-y-8">
-            <div className="space-y-4">
+          <div className="space-y-4">
+            <div className="space-y-2">
               <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
                 About Me
               </Badge>
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
                 About <span className="text-gradient">Vivek Bhos</span>
               </h2>
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-3 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
                 I'm a full-stack developer and entrepreneur based in Pune, India. As the Co-Founder of <a href="https://www.navibyte.in" target="_blank" rel="noopener noreferrer" className="text-foreground font-bold underline decoration-primary/30 underline-offset-4 hover:text-primary transition-colors">Navibyte Innovations Private Limited</a>, I focus on delivering high-quality digital solutions that solve real-world problems.
               </p>
@@ -78,7 +78,7 @@ export function AboutSection() {
                 key={index}
                 className="compact-card group border-none shadow-none bg-muted/40 hover:bg-muted/60"
               >
-                <CardContent className="p-8 flex flex-col items-center text-center space-y-4">
+                <CardContent className="p-4 sm:p-5 flex flex-col items-center text-center space-y-3">
                   <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                     {highlight.icon}
                   </div>

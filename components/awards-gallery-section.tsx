@@ -70,13 +70,13 @@ export function AwardsGallerySection() {
   return (
     <section id="awards" className="app-section bg-muted/20">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div className="space-y-4 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+          <div className="space-y-2 max-w-2xl">
             <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
               <Trophy className="mr-2 h-3.5 w-3.5" />
               Achievements
             </Badge>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
               Recognition & <span className="text-gradient">Awards</span>
             </h2>
           </div>
@@ -86,7 +86,7 @@ export function AwardsGallerySection() {
           {awards.map((award) => (
             <Dialog key={award.id}>
               <DialogTrigger asChild>
-                <div className="compact-card shine-effect group cursor-pointer border border-border/10 bg-background/50 p-1.5 h-48 sm:h-64 hover:border-primary/50 transition-all duration-500">
+                <div className="compact-card shine-effect group cursor-pointer border border-border/10 bg-background/50 p-1.5 h-40 sm:h-56 hover:border-primary/50 transition-all duration-500">
                   <div className="relative w-full h-full rounded-lg overflow-hidden">
                     <Image
                       src={award.image}

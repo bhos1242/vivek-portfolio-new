@@ -138,18 +138,18 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="app-section bg-muted/30">
+    <section id="projects" className="app-section bg-muted/30 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="space-y-4 max-w-2xl">
+        <div className="flex flex-col mb-8 gap-6">
+          <div className="space-y-2 max-w-2xl">
             <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
-              Portfolio
+              Portfolio Showcase
             </Badge>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
               Selected <span className="text-gradient">Projects</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              A collection of digital products and web applications built with modern technologies.
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+              From enterprise platforms to community initiatives, exploring digital frontiers through code and creativity.
             </p>
           </div>
           <Button variant="ghost" className="rounded-full group" asChild>
@@ -195,18 +195,24 @@ export function ProjectsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
               </div>
 
-              <div className="flex flex-col flex-1 p-5 sm:p-6 justify-between">
-                <div className="space-y-4">
-                  <CardHeader className="p-0">
-                    <CardTitle className={`${project.featured ? "text-2xl sm:text-4xl" : "text-xl"} font-black tracking-tight group-hover:text-primary transition-colors line-clamp-1`}>
-                      {project.title}
-                    </CardTitle>
-                  </CardHeader>
+                  <div className="flex flex-col flex-1 p-4 sm:p-5 justify-between">
+                    <div className="space-y-3">
+                      <CardHeader className="p-0">
+                        <CardTitle className={cn(
+                          "font-black tracking-tight group-hover:text-primary transition-colors line-clamp-1",
+                          project.featured ? "text-2xl sm:text-3xl" : "text-lg"
+                        )}>
+                          {project.title}
+                        </CardTitle>
+                      </CardHeader>
 
-                  <CardContent className="p-0 space-y-4">
-                    <p className={`text-muted-foreground leading-relaxed line-clamp-3 ${project.featured ? "text-base sm:text-lg" : "text-sm"}`}>
-                      {project.description}
-                    </p>
+                      <CardContent className="p-0 space-y-3">
+                        <p className={cn(
+                          "text-muted-foreground leading-relaxed line-clamp-3",
+                          project.featured ? "text-sm sm:text-base" : "text-xs sm:text-sm"
+                        )}>
+                          {project.description}
+                        </p>
 
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, i) => (
@@ -218,7 +224,7 @@ export function ProjectsSection() {
                   </CardContent>
                 </div>
 
-                <div className="flex gap-3 pt-6 mt-auto">
+                    <div className="flex gap-3 pt-4 mt-auto">
                   <Button size={project.featured ? "lg" : "sm"} className="rounded-full flex-1 hover-lift font-bold" asChild>
                     <a href={project.url} target="_blank" aria-label={`View live site for ${project.title}`}>
                       <ExternalLink className="mr-2 w-4 h-4" />

@@ -34,13 +34,13 @@ export function CertificationsSection() {
   return (
     <section id="certifications" className="app-section bg-background">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div className="space-y-4 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+          <div className="space-y-2 max-w-2xl">
             <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
               <Award className="mr-2 h-3.5 w-3.5" />
               Credentials
             </Badge>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
               Curated <span className="text-gradient">Acquisitions</span>
             </h2>
           </div>
@@ -49,7 +49,7 @@ export function CertificationsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certifications.map((cert, index) => (
             <Card key={index} className="compact-card group border-none bg-muted/30">
-              <CardContent className="p-4 space-y-4">
+              <CardContent className="p-3.5 space-y-3">
                 <div className="flex items-start justify-between">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shrink-0">
                     <Award className="w-5 h-5" />

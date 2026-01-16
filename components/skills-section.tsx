@@ -81,19 +81,19 @@ export function SkillsSection() {
   return (
     <section id="skills" className="app-section bg-background">
       <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-          <div className="space-y-4 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-6">
+          <div className="space-y-2 max-w-2xl">
             <Badge variant="outline" className="px-4 py-1 rounded-full border-primary/30 text-primary">
               Hard & Soft Skills
             </Badge>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight">
               Technical <span className="text-gradient">Versatility</span>
             </h2>
           </div>
         </div>
 
         <Tabs defaultValue="technical" className="w-full">
-          <TabsList className="flex w-full max-w-xs mb-8 p-1 bg-muted/50 rounded-full h-10">
+          <TabsList className="flex w-full max-w-xs mb-5 p-1 bg-muted/50 rounded-full h-10">
             <TabsTrigger value="technical" className="flex-1 rounded-full text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Technical</TabsTrigger>
             <TabsTrigger value="soft" className="flex-1 rounded-full text-xs font-bold data-[state=active]:bg-background data-[state=active]:shadow-sm">Soft Skills</TabsTrigger>
           </TabsList>
@@ -105,7 +105,7 @@ export function SkillsSection() {
                   key={index}
                   className="compact-card shine-effect group border-none bg-muted/30 hover:bg-muted/50 transition-colors"
                 >
-                  <CardContent className="p-4 space-y-4">
+                  <CardContent className="p-3.5 space-y-3">
                     <div className="flex items-center gap-2">
                       <div className="p-1.5 bg-primary/10 rounded-lg text-primary">
                         {category.icon}

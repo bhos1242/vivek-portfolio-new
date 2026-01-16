@@ -107,10 +107,10 @@ body {
 }
 
 .app-section {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 @media (min-width: 640px) {
@@ -122,15 +122,15 @@ body {
 
 @media (min-width: 640px) {
   .app-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .app-section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -140,13 +140,13 @@ body {
   background: color-mix(in srgb, var(--card), transparent 40%);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  padding: 1.25rem;
+  padding: 1rem;
   position: relative;
 }
 
 @media (min-width: 640px) {
   .compact-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: var(--radius-2xl);
   }
 }
