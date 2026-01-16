@@ -76,6 +76,8 @@ export function Navigation() {
           <div
             className="flex items-center gap-2 cursor-pointer group"
             onClick={() => scrollToSection("#hero")}
+            role="button"
+            aria-label="Scroll to top"
           >
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform">
               <Code className="h-4 w-4 text-primary-foreground" />
@@ -83,13 +85,14 @@ export function Navigation() {
             <span className="font-bold text-lg hidden lg:inline">Vivek Bhos</span>
           </div>
 
-          <div className="flex items-center gap-1 bg-muted/20 p-1 rounded-full">
+          <div className="flex items-center gap-1 bg-muted/20 p-1 rounded-full" role="navigation" aria-label="Desktop primary matching">
             {navItems.slice(0, 6).map((item) => {
               const isActive = activeSection === item.href.substring(1)
               return (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
+                  aria-current={isActive ? "page" : undefined}
                   className={`px-4 py-1.5 rounded-full text-[13px] font-bold transition-all ${isActive
                       ? "bg-primary text-primary-foreground shadow-md"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
@@ -105,6 +108,7 @@ export function Navigation() {
             size="sm"
             onClick={() => scrollToSection("#contact")}
             className="rounded-full shadow-lg"
+            aria-label="Connect with me"
           >
             Connect
           </Button>
@@ -134,7 +138,10 @@ export function Navigation() {
           })}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <button className="flex flex-col items-center gap-1 text-muted-foreground opacity-70">
+              <button 
+                className="flex flex-col items-center gap-1 text-muted-foreground opacity-70"
+                aria-label="Open navigation menu"
+              >
                 <Menu className="h-5 w-5" />
                 <span className="text-[10px] font-medium uppercase tracking-wider">More</span>
               </button>
@@ -170,6 +177,7 @@ export function Navigation() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           size="icon"
           className="fixed bottom-24 right-6 z-40 rounded-full shadow-2xl bg-primary hover:scale-110 transition-transform hidden md:flex"
+          aria-label="Scroll back to top"
         >
           <ChevronUp className="h-5 w-5" />
         </Button>

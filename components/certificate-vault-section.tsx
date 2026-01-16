@@ -34,7 +34,7 @@ export function CertificateVaultSection() {
     const certificates = Array.from({ length: 57 }, (_, i) => ({
         id: i + 1,
         src: `/certificates/vivek_all_certificates_page-${String(i + 1).padStart(4, '0')}.jpg`,
-        alt: `Certificate Page ${i + 1}`
+        alt: `Vivek Bhos - Achievement Credential Page ${i + 1}`
     }))
 
     const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi])

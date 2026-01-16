@@ -160,6 +160,7 @@ export function ContactSection() {
                     size="icon"
                     asChild
                     className={`hover:scale-110 transition-all duration-300 ${social.color}`}
+                    aria-label={`Connect on ${social.label}`}
                   >
                     <a href={social.href} target="_blank" rel="noopener noreferrer" title={social.label}>
                       {social.icon}

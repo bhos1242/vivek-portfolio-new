@@ -96,6 +96,46 @@ export function StructuredData() {
     }
   }
 
+  const majorProjectsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Featured Projects by Vivek Bhos",
+    "itemListElement": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PracticeStacks",
+        "description": "Enterprise-grade proposal and compliance management platform with AI-powered automation.",
+        "url": "https://www.practicestacks.in/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Donate Aid Society",
+        "description": "Platform for charitable donations with secure online payment gateways and intuitive UI/UX.",
+        "url": "https://donateaidsociety.vercel.app/",
+        "applicationCategory": "SocialNetworkingApplication",
+        "operatingSystem": "Web"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Kaydyach Ani Faydyach",
+        "description": "Comprehensive platform providing detailed information about legal rights and government schemes.",
+        "url": "https://kaydyanch-ani-faydyach.vercel.app/",
+        "applicationCategory": "InformationalApplication",
+        "operatingSystem": "Web"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "My Abhyasika",
+        "description": "Cloud-based study-space platform with real-time booking and automated payments.",
+        "url": "https://www.abhyasika.online/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web"
+      }
+    ]
+  }
+
   const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -161,6 +201,12 @@ export function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(professionalServiceSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(majorProjectsSchema),
         }}
       />
     </>

@@ -9,61 +9,61 @@ const awards = [
   {
     id: 1,
     image: "/gallary/image.png",
-    alt: "Achievement Photo 1"
+    alt: "Vivek Bhos - Achievement Photo 1"
   },
   {
     id: 2,
     image: "/gallary/image copy.png",
-    alt: "Achievement Photo 2"
+    alt: "Vivek Bhos - Achievement Photo 2"
   },
   {
     id: 3,
     image: "/gallary/image copy 2.png",
-    alt: "Achievement Photo 3"
+    alt: "Vivek Bhos - Achievement Photo 3"
   },
   {
     id: 4,
     image: "/gallary/image copy 3.png",
-    alt: "Achievement Photo 4"
+    alt: "Vivek Bhos - Achievement Photo 4"
   },
   {
     id: 5,
     image: "/gallary/image copy 4.png",
-    alt: "Achievement Photo 5"
+    alt: "Vivek Bhos - Achievement Photo 5"
   },
   {
     id: 6,
     image: "/gallary/image copy 5.png",
-    alt: "Achievement Photo 6"
+    alt: "Vivek Bhos - Achievement Photo 6"
   },
   {
     id: 7,
     image: "/gallary/image copy 6.png",
-    alt: "Achievement Photo 7"
+    alt: "Vivek Bhos - Achievement Photo 7"
   },
   {
     id: 8,
     image: "/gallary/image copy 7.png",
-    alt: "Achievement Photo 8"
+    alt: "Vivek Bhos - Achievement Photo 8"
   },
   {
     id: 9,
     image: "/gallary/image copy 8.png",
-    alt: "Achievement Photo 9"
+    alt: "Vivek Bhos - Achievement Photo 9"
   }
   ,
   {
     id: 10,
     image: "/iebos.jpg",
-    alt: "Appointment Letter - Industry Expert (Modern College)"
+    alt: "Vivek Bhos - Appointment Letter (Modern College)"
   }
 ]
 
 // Added recent uploads
 awards.push(
-  { id: 11, image: "/gallary/image.1.png", alt: "Achievement Photo 11" },
-  { id: 12, image: "/gallary/image.2.png", alt: "Achievement Photo 12" },
-  { id: 13, image: "/gallary/image.3.png", alt: "Achievement Photo 13" }
+  { id: 11, image: "/gallary/image.1.png", alt: "Vivek Bhos - Achievement Photo 11" },
+  { id: 12, image: "/gallary/image.2.png", alt: "Vivek Bhos - Achievement Photo 12" },
+  { id: 13, image: "/gallary/image.3.png", alt: "Vivek Bhos - Achievement Photo 13" }
 )
 
 export function AwardsGallerySection() {

@@ -75,6 +75,7 @@ export function HeroSection() {
                     size="icon"
                     asChild
                     className="w-14 h-14 rounded-full border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all hover-lift"
+                    aria-label={`Connect on ${social.icon.name}`}
                   >
                     <a href={social.href} target="_blank" rel="noopener noreferrer">
                       <social.icon className="h-5 w-5" />
@@ -109,6 +110,7 @@ export function HeroSection() {
         <button
           onClick={scrollToAbout}
           className="p-3 rounded-full glass-morphism hover:bg-primary/10 transition-colors animate-bounce shadow-lg"
+          aria-label="Scroll down to About section"
         >
           <ChevronDown className="h-5 w-5 text-muted-foreground" />
         </button>

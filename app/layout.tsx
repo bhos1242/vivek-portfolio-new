@@ -48,13 +48,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: '/',
+    url: 'https://vivek-bhos.vercel.app/',
     title: 'Vivek Bhos – Full-Stack Web Developer & Co-Founder',
     description: 'Portfolio of Vivek Bhos, Full-Stack Developer and Co-Founder of Navibyte Innovations Private Limited. Building scalable web solutions and delivering tech talks.',
     siteName: 'Vivek Bhos Portfolio',
     images: [
       {
-        url: '/hero.png',
+        url: 'https://vivek-bhos.vercel.app/hero.png',
         width: 1200,
         height: 630,
         alt: 'Vivek Bhos - Full-Stack Web Developer',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Vivek Bhos – Full-Stack Web Developer & Co-Founder',
     description: 'Portfolio of Vivek Bhos, Full-Stack Developer and Co-Founder of Navibyte Innovations Private Limited. Building scalable web solutions.',
-    images: ['/hero.png'],
+    images: ['https://vivek-bhos.vercel.app/hero.png'],
     creator: '@bhos1242',
   },
   robots: {
@@ -82,7 +82,15 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-verification-code', // Add your actual Google verification code
   },
+  category: 'technology',
   generator: "Next.js",
+}
+
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090b' },
+  ],
 }
 
 export default function RootLayout({
