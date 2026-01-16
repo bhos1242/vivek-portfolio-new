@@ -204,61 +204,52 @@ export function ContactSection() {
                       <Label htmlFor="name" className="text-sm font-medium">Name *</Label>
                       <Input
                         id="name"
-                        name="name"
-                        placeholder="Your full name"
+                        placeholder="John Doe"
                         value={formData.name}
-                        onChange={handleChange}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
-                        className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                        className="bg-background/50 border-border/50 h-11 sm:h-12 rounded-xl focus:ring-primary/20 transition-all"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email" className="text-sm font-medium">Email *</Label>
                       <Input
                         id="email"
-                        name="email"
                         type="email"
-                        placeholder="your.email@example.com"
+                        placeholder="john@example.com"
                         value={formData.email}
-                        onChange={handleChange}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                        className="bg-background/50 border-border/50 h-11 sm:h-12 rounded-xl focus:ring-primary/20 transition-all"
                       />
                     </div>
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="subject" className="text-sm font-medium">Subject *</Label>
                     <Input
                       id="subject"
-                      name="subject"
-                      placeholder="What's this about?"
+                      placeholder="Project Discussion"
                       value={formData.subject}
-                      onChange={handleChange}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+                      className="bg-background/50 border-border/50 h-11 sm:h-12 rounded-xl focus:ring-primary/20 transition-all"
                     />
                   </div>
-
                   <div className="space-y-2">
                     <Label htmlFor="message" className="text-sm font-medium">Message *</Label>
                     <Textarea
                       id="message"
-                      name="message"
-                      placeholder="Tell me about your project, requirements, timeline, and how I can help..."
-                      rows={6}
+                      placeholder="Tell me about your project..."
                       value={formData.message}
-                      onChange={handleChange}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20 resize-none"
+                      className="min-h-[120px] sm:min-h-[150px] bg-background/50 border-border/50 rounded-xl focus:ring-primary/20 transition-all resize-none"
                     />
                   </div>
-
                   <Button
                     type="submit"
-                    className="w-full sm:w-auto group"
+                    className="w-full h-11 sm:h-12 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90 font-bold"
                     disabled={isSubmitting}
-                    size="lg"
                   >
                     {isSubmitting ? (
                       <>
